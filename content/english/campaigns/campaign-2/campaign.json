@@ -2,11 +2,11 @@
   "campaignMetadata": {
     "title": "End Child Labor in Cocoa Supply Chains",
     "description": "A campaign targeting Nestlé's continued failure to eliminate child labor from its cocoa supply chains in West Africa despite repeated pledges.",
-    "hostUrl": "https://neural-loop.github.io/educenter-hugo/campaigns/campaign-2/",
+    "hostUrl": "https://boycott-beacon.github.io/campaigns/campaign-2/",
     "launchDate": "2023-10-01",
     "organizer": "Child Labor Free Cocoa Initiative",
     "tags": ["child-labor", "cocoa", "west-africa", "supply-chain"],
-    "image": "https://neural-loop.github.io/educenter-hugo/images/campaigns/cocoa-child-labor.jpg",
+    "image": "https://boycott-beacon.github.io/images/campaigns/cocoa-child-labor.jpg",
     "versionId" : 1
   },
   "targets": [
