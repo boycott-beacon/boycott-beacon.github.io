@@ -31,9 +31,8 @@ If you find Boycott Beacon valuable and have the means, a financial contribution
 *   **GitHub Sponsors:** Support ongoing development through GitHub Sponsors.
 *   **Ko-fi:** Make a one-time or recurring contribution via Ko-fi.
 
-
-    <a href="#" class="btn btn-primary btn-sm mt-2 d-inline-block" target="_blank" rel="noopener noreferrer">Support via Ko-fi</a>
-    <a href="#" class="btn btn-primary btn-sm mt-2 d-inline-block" target="_blank" rel="noopener noreferrer">Sponsor on GitHub</a>
+<a href="#" class="btn btn-primary btn-sm mt-2 d-inline-block" target="_blank" rel="noopener noreferrer">Support via Ko-fi</a>
+<a href="#" class="btn btn-primary btn-sm mt-2 d-inline-block" target="_blank" rel="noopener noreferrer">Sponsor on GitHub</a>
 
 ### Non-Financial Support
 

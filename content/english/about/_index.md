@@ -56,4 +56,4 @@ Boycott Beacon operates on simple, transparent principles:
 
 Transparency is key to trust. Boycott Beacon's code is publicly available on GitHub. We encourage you to review it, report issues, and contribute to its development.
 
-[View Code on GitHub](https://github.com/neural-loop/boycott-beacon) <!-- Replace with your actual GitHub repo link -->
+[View Code on GitHub](https://github.com/boycott-beacon) <!-- Replace with your actual GitHub repo link -->

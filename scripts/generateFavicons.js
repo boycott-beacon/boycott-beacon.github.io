@@ -12,8 +12,8 @@ const IMAGE_CONFIG = [
   { filename: 'favicon-16x16.png', size: 16, outputSubDir: '', forceSquare: true },
   { filename: 'favicon-32x32.png', size: 32, outputSubDir: '', forceSquare: true },
   { filename: 'apple-touch-icon.png', size: 180, outputSubDir: '', forceSquare: true },
+  { filename: 'favicon.png', size: 96, outputSubDir: '', forceSquare: true },
   { filename: 'favicon.ico', size: 32, outputSubDir: '', forceSquare: true },
-
   // Main Logo (output to static/images/, resize based on height)
   { filename: 'logo.png', height: 80, outputSubDir: '', forceSquare: false }
 ];

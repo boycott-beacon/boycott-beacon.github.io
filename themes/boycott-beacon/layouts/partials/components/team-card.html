@@ -1,38 +1,26 @@
 {{/* layouts/partials/components/team-card.html */}}
-<div class="team-card card border-0 shadow-sm mb-4">
+<div class="team-card card border-0 solid-shadow-lb mb-4">
   <div class="card-body p-4">
     <div class="row align-items-center">
       {{/* Image Column */}}
       <div class="col-md-3 text-center text-md-left mb-4 mb-md-0">
-        {{ $image := .image }}
-        {{ if $image }}
-        {{/* Use the existing image partial if it handles responsiveness, otherwise use standard img tag */}}
-        {{/* Option 1: Using existing partial (assuming it adds img-fluid or similar) */}}
-        {{ partial "image.html" (dict "Src" $image "Alt" .name "Class" "team-card-image rounded" "Size" "200x200") }}
-        {{/* Option 2: Standard img tag */}}
-        {{/* <img src="{{ $image | absURL }}" alt="{{ .name }}" class="team-card-image rounded img-fluid"> */}}
-        {{ else }}
-        {{/* Placeholder if no image */}}
-        <div class="team-card-image-placeholder rounded bg-light d-flex align-items-center justify-content-center">
-          <i class="ti-user" style="font-size: 50px; color: #ccc;"></i>
-        </div>
-        {{ end }}
+        {{/* ... image logic ... */}}
       </div>
 
       {{/* Content Column */}}
       <div class="col-md-9 team-card-content">
-        <h4 class="mb-2">{{ .name }}</h4>
-        {{ with .title }}<p class="text-muted font-weight-bold mb-3">{{ . }}</p>{{ end }}
-        <div class="team-card-description mb-3">
-          {{ .description | markdownify | safeHTML }}
-        </div>
+        {{/* ... name, title, description ... */}}
         {{ if .social }}
         <ul class="list-inline team-card-socials mb-0">
           {{ range .social }}
           <li class="list-inline-item mr-3">
             <a href="{{ .link | safeURL }}" target="_blank" rel="noopener noreferrer" class="text-color" title="{{ .title }}">
+              {{ if eq .icon "ti-twitter" }}
+              <i class="fa-brands fa-x-twitter"></i>
+              {{ else }}
               <i class="{{ .icon }}"></i>
-              <span class="sr-only">{{ .title }}</span> {{/* Keep for accessibility */}}
+              {{ end }}
+              <span class="sr-only">{{ .title }}</span>
             </a>
           </li>
           {{ end }}

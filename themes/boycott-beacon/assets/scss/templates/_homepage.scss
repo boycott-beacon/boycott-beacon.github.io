@@ -48,10 +48,10 @@
 }
 
 .hover-shadow {
-  transition: .3s ease;
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 4px 25px 0px rgba(27, 39, 71, 0.15);
+    box-shadow: -6px 6px 0px 0px rgba($primary-color, 0.15); // Example: larger offset, primary color hint
   }
 }
 
@@ -234,16 +234,25 @@
   a {
     color: #8996a7;
     text-transform: capitalize;
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
     &:hover {
-      text-decoration: underline;
       color: $white;
+      border-bottom-color: $primary-color;
     }
   }
 }
 
+.copyright .text-primary {
+  color: #fff !important;
+}
 .copyright p {
-  color: #8996a7;
+  color: #fff;
   text-transform: capitalize;
+
 }
 
 /* /footer */

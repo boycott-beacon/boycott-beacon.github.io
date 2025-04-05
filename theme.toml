@@ -10,8 +10,8 @@ min_version = "0.115.1" # Keep unless you know specific features require a newer
 
 # Information about the modifier/current project maintainer
 [author]
-name = "BoycottBeacon Project / Neural Loop" # <<< UPDATE with your name/org
-homepage = "https://github.com/neural-loop/" # <<< UPDATE with your relevant homepage/repo
+name = "BoycottBeacon Project / Neural Loop"
+homepage = "https://github.com/neural-loop/"
 
 # Information about the original theme for attribution purposes
 [original]

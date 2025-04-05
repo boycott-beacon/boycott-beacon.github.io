@@ -14,9 +14,9 @@
       <!-- Social share buttons -->
       <div class="social-share-overlay">
         <div class="social-icons-container">
-          <a href="https://twitter.com/intent/tweet?text={{ .Title | urlquery }}&url={{ .Permalink | absURL }}"
-             target="_blank" rel="noopener" class="social-icon twitter" title="Share on Twitter">
-            <i class="ti-twitter-alt"></i>
+          <a href="https://x.com/intent/tweet?text={{ .Title | urlquery }}%20{{ .Permalink | absURL }}"
+             target="_blank" rel="noopener" class="social-icon twitter" title="Share on X/Twitter"> <!-- Changed title -->
+            <i class="fa-brands fa-x-twitter"></i> <!-- <<< CHANGED HERE -->
           </a>
           <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}"
              target="_blank" rel="noopener" class="social-icon facebook" title="Share on Facebook">
@@ -32,9 +32,9 @@
 
     <!-- Sharing runner at bottom -->
     <div class="sharing-runner">
-      <span>Sharing is Support</span>
+      <span>. : : Sharing is Support : : .</span>
       <div class="runner-icons">
-        <i class="ti-twitter-alt"></i>
+        <i class="fa-brands fa-x-twitter"></i> <!-- <<< CHANGED HERE -->
         <i class="ti-facebook"></i>
         <i class="ti-linkedin"></i>
       </div>

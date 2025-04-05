@@ -1,37 +1,58 @@
 /* SCSS for OG Preview Component (_og-preview.scss) */
 
+// Assumed variables (replace with your actual variables if different)
+$black: #000;
+$white: #fff;
+$border-radius: 0px; // Example global variable
+$transition-duration: 0.3s; // Example global variable
+$font-weight-medium: 500; // Example global variable
+$social-icon-height: 36px; // Define icon height for calculation
+$social-icon-height-tablet: 32px; // Define icon height for calculation
+
+// Assumed mixins (replace with your actual mixins)
+@mixin desktop {
+  @media (min-width: 992px) { // Example: Adjust breakpoint as needed for "large+"
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 991.98px) { // Example: Adjust breakpoint as needed for "medium and smaller"
+    @content;
+  }
+}
+
+
 .og-preview-wrapper {
   position: relative;
-  max-width: 280px; /* Consider making this a variable if used elsewhere */
+  max-width: 280px;
   margin-left: auto;
-  padding: 8px; /* Creates space for glow */
+  padding: 8px; /* Creates space for glow and potential scaling overflow */
 }
 
 .og-preview-container {
   position: relative;
   width: 100%;
-  border-radius: 8px; // Maybe use a global $border-radius variable?
+  border-radius: $border-radius;
   overflow: hidden;
   box-shadow:
-    0 4px 12px rgba($black, 0.1), /* Use $black variable */
-    0 0 0 1px rgba($white, 0.1), /* Inner border */
-    0 0 20px rgba($white, 0.3); /* Outer glow */
-  transition: all 0.3s ease; // Maybe use a global $transition variable?
-  aspect-ratio: 1.91/1; // Keep aspect ratio standard
+    0 4px 12px rgba($black, 0.1),
+    0 0 0 1px rgba($white, 0.1),
+    0 0 20px rgba($white, 0.3);
+  transition: transform $transition-duration ease, box-shadow $transition-duration ease;
+  aspect-ratio: 1.91/1; // <<< Keep the original aspect ratio globally
 
   &:hover {
     box-shadow:
       0 4px 20px rgba($black, 0.15),
       0 0 0 1px rgba($white, 0.2),
       0 0 30px rgba($white, 0.4);
-    .image-dark-overlay {
-      background: rgba($black, 0.7);
-    }
+
     .social-share-overlay {
-      opacity: 1;
+      opacity: 1; // Show icons
     }
     .sharing-runner {
-      transform: translateY(40px); /* Match height */
+      transform: translateY(100%); // Move runner down completely
     }
   }
 }
@@ -39,34 +60,33 @@
 .og-preview-image {
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover; // Default: Cover the container
   background-position: center;
-  position: relative;
+  background-repeat: no-repeat; // Add no-repeat globally
+  background-color: $light; // Add a background color for letterboxing
+  position: relative; // Positioning context for overlay
 }
 
 .image-dark-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba($black, 0);
-  transition: background 0.3s ease;
+  inset: 0; // shorthand for top/left/right/bottom = 0
+  background: rgba($black, 0); // Keep transparent
   z-index: 1;
+  pointer-events: none;
 }
 
 .social-share-overlay {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
-  bottom: 40px; /* Match runner height */
+  bottom: 0;
+  height: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 0; // Start hidden
+  transition: opacity $transition-duration ease;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .social-icons-container {
@@ -75,30 +95,34 @@
   gap: 12px;
   width: 100%;
   padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  transform: translateY(-50%);
 }
 
 .social-icon {
-  color: $white; // Use variable
+  color: $white;
   font-size: 20px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: $social-icon-height;
+  height: $social-icon-height;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: box-shadow $transition-duration ease, border-color 0.2s ease; // <<< ADD border-color transition
   text-decoration: none;
+  flex-shrink: 0;
+  box-shadow: -3px 3px 0px 0px $border-color;
+  border: 2px solid transparent; // <<< ADD: Initial transparent border
 
-  &.twitter { background: #1DA1F2; } // Consider variables for social colors if reused
-  &.facebook { background: #4267B2; }
-  &.linkedin { background: #0077B5; }
+  &.twitter { background: rgba($secondary-color, .8); }
+  &.facebook { background: rgba($secondary-color, .8); }
+  &.linkedin { background: rgba($secondary-color, .8); }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba($black, 0.2);
+    // Slightly larger offset and slightly darker shadow color on hover
+    box-shadow: -3px 3px 0px 0px darken($border-color, 10%); // <<< CHANGED COLOR & darkened
   }
 }
-
 .sharing-runner {
   position: absolute;
   bottom: 0;
@@ -111,61 +135,69 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
-  transition: all 0.3s ease;
-  z-index: 3;
+  transition: transform $transition-duration ease;
+  z-index: 3; // Above social overlay
 
   span {
     font-size: 14px;
-    font-weight: 500; // Use variable $font-weight-medium if defined
+    font-weight: $font-weight-medium;
   }
 }
 
 .runner-icons {
   display: flex;
   gap: 12px;
-
   i {
     font-size: 16px;
     color: $white;
     opacity: 0.8;
     transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 1;
-    }
+    &:hover { opacity: 1; }
   }
 }
 
-/* Responsive Adjustments */
-@include desktop { // Use mixin for breakpoint
-  .og-preview-wrapper {
-    max-width: 100%;
-    margin: 20px auto 0;
-    padding: 6px;
-  }
+/* --- Responsive Adjustments --- */
+
+@include desktop {
+  .og-preview-wrapper { max-width: 100%; margin: 20px auto 0; padding: 6px; }
   .og-preview-container {
-    max-width: 280px; /* Keep the container size consistent on smaller desktops */
-    margin: 0 auto;
+    max-width: 280px; margin: 0 auto;
+    &:hover { transform: scale(1.2); }
   }
 }
 
-@include tablet { // Use mixin for breakpoint
+@include tablet { // Styles for tablet and smaller
   .og-preview-container {
-    aspect-ratio: 1.5/1; // Adjust aspect ratio slightly
+    box-shadow: 0 4px 20px rgba($black, 0.15), 0 0 0 1px rgba($white, 0.2), 0 0 30px rgba($white, 0.4);
+    &:hover { transform: none; } // Keep hover disabled
   }
-  .social-icons-container,
-  .runner-icons {
-    gap: 8px;
+
+  .og-preview-image {
+    background-size: contain; // <<< CHANGE: Ensure whole image fits
   }
+
+  .image-dark-overlay { background: rgba($black, 0); transition: none; }
+
+  .social-share-overlay {
+    opacity: 1;
+    transition: none;
+  }
+
+  .social-icons-container {
+    transform: translateY(-50%); // Keep vertical positioning
+  }
+
+  .sharing-runner { transform: translateY(100%); transition: none; } // Keep hidden
+
+  .social-icons-container { gap: 8px; }
   .social-icon {
-    width: 32px;
-    height: 32px;
+    width: $social-icon-height-tablet;
+    height: $social-icon-height-tablet;
     font-size: 18px;
+    border-width: 1px; // <<< Optional: thinner border on smaller screens
+    box-shadow: -3px 3px 0px 0px rgba($border-color, 1);
+
   }
-  .runner-icons i {
-    font-size: 14px;
-  }
-  .sharing-runner span {
-    font-size: 13px;
-  }
+  .runner-icons i { font-size: 14px; }
+  .sharing-runner span { font-size: 13px; }
 }
