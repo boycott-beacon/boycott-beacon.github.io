@@ -6,7 +6,6 @@
     "launchDate": "2023-10-01",
     "organizer": "Child Labor Free Cocoa Initiative",
     "tags": ["child-labor", "cocoa", "west-africa", "supply-chain"],
-    "image": "https://boycott-beacon.github.io/images/campaigns/cocoa-child-labor.jpg",
     "versionId" : 1
   },
   "targets": [
