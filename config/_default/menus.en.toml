@@ -1,0 +1,28 @@
+################### English navigation ####################
+
+# Main Menu
+[[main]]
+name = "Campaigns"
+url = "campaigns/"
+weight = 1
+
+[[main]]
+name = "About"
+url = "about/"
+weight = 2
+
+[[main]]
+weight = 3
+name = "Support Us"
+url = "support/"
+
+# Footer Menu
+[[footer]]
+name = "About"
+url = "about/"
+weight = 2
+
+[[footer]]
+name = "Support Us"
+url = "support/"
+weight = 3

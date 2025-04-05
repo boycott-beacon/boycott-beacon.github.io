@@ -1,0 +1,113 @@
+{{ define "main" }}
+<!-- notice details -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <!-- Content Column -->
+          <div class="col-md-8 order-2 order-md-1">
+            <div class="content">
+              {{ .Content }}
+            </div>
+          </div>
+
+          <!-- Right Sidebar Column -->
+          <div class="col-md-4 order-1 order-md-2 mb-4 mb-md-0">
+            <!-- Subscribe to Campaign -->
+            <div class="campaign-action-card mb-4">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                  <h4 class="card-title mb-3">Join This Campaign</h4>
+                  <a href="campaign.json"
+                     class="btn btn-primary btn-block subscribe-btn"
+                     data-beacon-subscribe>
+                    <i class="ti-bell mr-2"></i> Subscribe to Campaign
+                  </a>
+                  <p class="small text-muted mt-2 mb-0">
+                    Requires <a href="https://boycottbeacon.org/install" target="_blank">Boycott Beacon extension</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Campaign Author -->
+            {{ if .Params.author }}
+            <div class="author-card mb-4">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <h5 class="card-title mb-3">Campaign Author</h5>
+                  <div class="d-flex align-items-center mb-3">
+                    {{ if .Params.author_image }}
+                    <img src="{{ .Params.author_image | absURL }}"
+                         class="rounded-circle mr-3"
+                         width="60"
+                         height="60"
+                         alt="{{ .Params.author }}">
+                    {{ end }}
+                    <div>
+                      <h6 class="mb-1">{{ .Params.author }}</h6>
+                      {{ if .Params.author_title }}
+                      <p class="small text-muted mb-0">{{ .Params.author_title }}</p>
+                      {{ end }}
+                    </div>
+                  </div>
+
+                  {{ if .Params.author_socials }}
+                  <div class="social-links mt-2">
+                    {{ range .Params.author_socials }}
+                    <a href="{{ .link }}" target="_blank" class="btn btn-sm btn-outline-secondary mr-2 mb-2">
+                      <i class="ti-{{ .platform }}"></i> {{ .name }}
+                    </a>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+
+            <!-- Supporting Organizations -->
+            {{ if .Params.supporting_orgs }}
+            <div class="orgs-card">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <h5 class="card-title mb-3">Supported By</h5>
+                  <div class="orgs-list">
+                    {{ range .Params.supporting_orgs }}
+                    <div class="org-item mb-3">
+                      {{ if .logo }}
+                      <img src="{{ .logo | absURL }}"
+                           class="img-fluid mb-2"
+                           style="max-height: 40px;"
+                           alt="{{ .name }}">
+                      {{ end }}
+                      <h6 class="mb-1">{{ .name }}</h6>
+                      <div class="org-links">
+                        {{ if .website }}
+                        <a href="{{ .website }}" target="_blank" class="btn btn-sm btn-outline-primary mr-2">
+                          <i class="ti-world"></i> Website
+                        </a>
+                        {{ end }}
+                        {{ if .discord }}
+                        <a href="{{ .discord }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                          <i class="ti-comments"></i> Discord
+                        </a>
+                        {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /notice details -->
+
+{{ end }}

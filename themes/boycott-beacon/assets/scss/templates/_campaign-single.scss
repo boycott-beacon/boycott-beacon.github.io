@@ -1,0 +1,81 @@
+/* Custom Styles for Single Campaign Page (_campaign-single.scss) */
+
+.campaign-action-card {
+  .card {
+    // Use existing variables/styles if applicable, e.g., from _common.scss or _variables.scss
+    // border: 1px solid $border-color; // Example if shadow isn't enough
+  }
+}
+
+.subscribe-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease; // Use global transition?
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($black, 0.15); // Use variable
+
+    &:after {
+      left: 100%; // Animate the pseudo-element
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: rgba($white, 0.1); // Use variable
+    transform: rotate(30deg);
+    transition: all 0.5s ease; // Slightly slower shine effect
+    // Make sure this doesn't conflict with the main button transition
+  }
+}
+
+.author-card {
+  .card {
+    // Optional: Add common card styles if needed
+  }
+  img {
+    object-fit: cover; // Good practice for profile pics
+  }
+  .social-links {
+    .btn { // Target buttons specifically within social links
+      margin-right: 5px; // Adjust spacing as needed
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.orgs-card {
+  .card {
+    // Optional: Add common card styles if needed
+  }
+}
+
+.org-item {
+  padding-bottom: 15px;
+  margin-bottom: 15px; // Added margin for spacing between items
+  border-bottom: 1px solid $border-color; // Use variable
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  img {
+    // Styles for org logos if needed, e.g., max-width
+  }
+
+  .org-links {
+    margin-top: 5px; // Add space above links
+    .btn { // Target buttons specifically within org links
+      margin-right: 5px;
+      // Consider btn-sm if appropriate
+    }
+  }
+}

@@ -1,17 +1,22 @@
-name = "Educenter Hugo"
-license = "MIT"
-licenselink = "https://github.com/themefisher/educenter-hugo/blob/master/LICENSE"
-description = "Educenter is an educational website template powered by Hugo. It can be used as an online teaching platform, school and university website."
-homepage = "https://gethugothemes.com/products/educenter-hugo/"
-demosite = "https://demo.gethugothemes.com/educenter/"
-tags = ["blog",'google-analytics', 'fast', 'modern', 'minimal', 'minimalistic', 'business', 'education', 'white', 'light', 'multilingual', "bootstrap", "company", "portfolio", "projects", "responsive", "themefisher", "gethugothemes"]
-features = ["blog", "company", "responsive", "seo-friendly"]
-min_version = "0.115.1"
+# Theme metadata for the Boycott Beacon Website Hugo setup
+name = "Boycott Beacon Theme"
+license = "MIT" # The code derived from Educenter retains its MIT license
+licenselink = "https://github.com/themefisher/educenter-hugo/blob/master/LICENSE" # Link to the original theme's license for attribution
+description = "A Hugo theme powering the website for the Boycott Beacon browser extension. Provides campaign info, support details, and project information."
+homepage = "https://boycott-beacon.github.io"
+tags = ["privacy", "browser extension", "activism", "boycott", "hugo", "bootstrap", "responsive", "open source"] # Updated tags
+features = ["campaign listing", "privacy focused", "responsive", "OG image generation", "favicon generation"] # Updated features
+min_version = "0.115.1" # Keep unless you know specific features require a newer version
 
+# Information about the modifier/current project maintainer
 [author]
-  name = "Themefisher"
-  homepage = "https://themefisher.com/"
+name = "BoycottBeacon Project / Neural Loop" # <<< UPDATE with your name/org
+homepage = "https://github.com/neural-loop/" # <<< UPDATE with your relevant homepage/repo
 
+# Information about the original theme for attribution purposes
 [original]
-  name = "Educenter"
-  homepage = "https://themefisher.com/products/education-template/"
+name = "Educenter Hugo Theme"
+homepage = "https://gethugothemes.com/products/educenter-hugo/"
+repo = "https://github.com/themefisher/educenter-hugo"
+author = "Themefisher / Gethugothemes"
+author_homepage = "https://themefisher.com/"

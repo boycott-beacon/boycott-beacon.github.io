@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<!-- about content -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /about content -->
+
+{{/* Team Members Section */}}
+{{ if .Params.members }}
+<section class="section pt-0"> {{/* Use pt-0 if spacing looks too much after main content */}}
+  <div class="container">
+    <div class="row justify-content-center"> {{/* Optional: center if cards don't fill width */}}
+      {{ $sortedMembers := sort .Params.members "member_id" "asc" }}
+      {{ range $sortedMembers }}
+      {{/* Use Bootstrap columns. col-lg-10 or col-12 makes it wider */}}
+      <div class="col-lg-10 col-md-12"> {{/* ADJUST columns as needed */}}
+        {{ partial "components/team-card.html" . }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{/* End Team Members Section */}}
+
+
+{{ end }}

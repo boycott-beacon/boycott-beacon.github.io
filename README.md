@@ -1,147 +1,111 @@
-<h1 align=center>Educenter Hugo</h1> 
-<p align=center> Educenter is a Hugo theme designed specifically for educational websites. This sleek theme is packed with all the elements that you need to show info about your school, courses, instructors, announcements, and more. </p>
-
-<h2 align="center"> <a target="_blank" href="https://demo.gethugothemes.com/educenter" rel="nofollow">👀Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethugothemes.com%2Feducenter%2Fsite%2F&form_factor=desktop">Page Speed (96%)🚀</a></h2>
-
-
-<p align=center>
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.115.1" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.115.1&color=f00&logo=hugo" />
-  </a>
-
-  <a href="https://github.com/themefisher/educenter-hugo/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/themefisher/educenter-hugo" alt="license"></a>
-
-  <img src="https://img.shields.io/github/languages/code-size/themefisher/educenter-hugo" alt="code size">
-
-  <a href="https://github.com/themefisher/educenter-hugo/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/themefisher/educenter-hugo" alt="contributors"></a>
-
-  <a href="https://twitter.com/intent/follow?screen_name=gethugothemes">
-    <img src="https://img.shields.io/twitter/follow/gethugothemes?style=social&logo=twitter"
-      alt="follow on Twitter"></a>
-</p>
-
----
+# Boycott Beacon Website
 
 <p align="center">
-<img src="https://demo.gethugothemes.com/thumbnails/educenter.png" alt="screenshot" width="100%">
+  The official website for the Boycott Beacon browser extension, built with Hugo. This site provides information about the extension, lists available boycott campaigns, and offers ways to support the project.
+</p>
+
+<h2 align="center">
+  <a target="_blank" href="[YOUR_WEBSITE_URL_HERE]" rel="nofollow">👀 Live Site</a> |
+  <a target="_blank" href="https://pagespeed.web.dev/report?url=[YOUR_WEBSITE_URL_HERE]">Page Speed Test</a>
+</h2>
+
+<p align="center">
+  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.115.1" alt="Hugo Version">
+    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.115.1&color=f00&logo=hugo" />
+  </a>
+  <a href="https://github.com/neural-loop/boycott-beacon-website/blob/main/LICENSE"> <!-- << UPDATE LINK TO YOUR REPO -->
+    <img src="https://img.shields.io/github/license/neural-loop/boycott-beacon-website" alt="license"> <!-- << UPDATE REPO -->
+  </a>
+  <!-- Add other relevant badges if desired -->
 </p>
 
 ---
-## 📌Key Features
 
--  📄 19+ Pre-designed pages
--  📚Multiple language support (Fr, En) 
-- 〽️Google analytics  support 
--  📂CSS and Js bundle with hugo pipe
--  🔧Netlify settings predefine
--  👥Multiple author available
--  📝Contact form Support
--  📧Mailchimp integrate
--  👉GDPR consent enable
--  🌏Google map support
--  📰Top header customization
--  🗃️Taxonomy or category
--  ⚡Google page speed optimized
--  🧑‍💻Open graph meta tag
--  👉Twitter card meta tag
--  🌐Social Share
+<!-- Optional: Add a screenshot of YOUR website -->
+<!-- <p align="center">
+<img src="[LINK_TO_YOUR_SCREENSHOT.png]" alt="screenshot" width="100%">
+</p> -->
 
-## 📄 19+ Pre-Designed Pages
+---
 
-- 🏠Home
-- 👤About
-- 👤Author Single Page
-- 📗Course Page
-- 📗Course Single Page
-- 🗂️Categories
-- 🗂️Category Single
-- 📝Blog
-- 📝Blog Single
-- 📞Contact
-- 📆Event Page 
-- 📆Event single Page
-- 📄Notice Page
-- 📄Notice Single Page
-- 📑Research Page 
-- 📑Research Single Page
-- 👑Scholarship Page
-- 🧑‍💼Teacher Page
-- 🧑‍💼Teacher Single Page 
-- 📖404 Page
+## 📌 Key Features
 
+*   **Extension Information:** Clear explanation of what Boycott Beacon is and how it works.
+*   **Privacy Focused:** Details the extension's commitment to user privacy with local processing.
+*   **Campaign Listing:** Browse available boycott campaign manifests.
+*   **Campaign Details:** View specific information, reasons, and citations for each campaign.
+*   **Easy Subscription:** Direct links to subscribe to campaigns via the Boycott Beacon extension (requires extension installed).
+*   **Support Options:** Information on how to support the project financially or through contributions.
+*   **Open Source:** Built with transparency in mind.
+*   **Responsive Design:** Adapts to various screen sizes.
+*   **Automated OG Image Generation:** Automatically creates social sharing preview images for content pages.
+*   **Automated Favicon Generation:** Generates necessary favicon formats from a source logo.
 
-## 🛠️Local development
+## 🛠️ Local Development
 
-```bash
-# clone the repository
-git clone git@github.com:themefisher/educenter-hugo.git
+1.  **Clone the repository:**
+    ```bash
+    # Replace with your actual repository URL
+    git clone git@github.com:neural-loop/boycott-beacon-website.git
+    cd boycott-beacon-website
+    ```
 
-# setup project
-$ npm run project-setup
+2.  **Install Dependencies:**
+    ```bash
+    # Ensure Node.js and npm are installed
+    npm install
+    ```
+    *This installs helper packages for build scripts.*
 
-# Start local dev server
-$ npm run dev
-```
-Or Check out [Full Documentation](https://docs.gethugothemes.com/educenter/?ref=github).
+3.  **Install Hugo:**
+    Make sure you have Hugo (Extended version, minimum `0.115.1`) installed. See [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
 
+4.  **Install Build Tools:**
+  *   **ImageMagick:** Required for generating favicons and logos.
+      ```bash
+      # On Debian/Ubuntu
+      sudo apt-get update && sudo apt-get install imagemagick
+      # On macOS (using Homebrew)
+      # brew install imagemagick
+      ```
+  *   **wkhtmltoimage:** Required for generating Open Graph images. Download from the [wkhtmltopdf website](https://wkhtmltopdf.org/downloads.html) and ensure it's in your system's PATH.
 
-## 🔧Deployment and hosting
+5.  **Run the Development Server:**
+    ```bash
+    # Using npm script (Recommended, runs pre-build steps if any)
+    npm run dev
+    # Or directly using Hugo
+    # hugo server --buildFuture
+    ```
+    *The site will be available at `http://localhost:1313/` (or another port if 1313 is busy).*
 
-[![Deploy to
-Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/themefisher/educenter-hugo)
+## 🔧 Deployment
 
-Follow the steps.
+This project includes configuration files for easy deployment:
 
-<!-- reporting issue -->
-## 🐞Reporting Issues
-We use GitHub Issues as the official bug tracker for the Educenter  Template. Please Search [existing
-issues](https://github.com/themefisher/educenter-hugo/issues). Someone may have already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new
-issue](https://github.com/themefisher/educenter-hugo/issues).
+*   **Netlify:** Click the button below or configure manually using `netlify.toml`.
+    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=[YOUR_PROJECT_REPO_URL]) <!-- << UPDATE REPO URL -->
+*   **Vercel:** Deploy using the Vercel dashboard or CLI. The `vercel.json` and `vercel-build.sh` files provide the necessary configuration. Ensure ImageMagick and wkhtmltoimage are available in the Vercel build environment (may require adjustments to `vercel-build.sh` or build settings).
 
+The build command (`npm run build`) handles image generation and the Hugo build process.
 
- ## 📱Submit Your Website To Our Showcase
+## 🤝 Contributing & Support
 
-Are you using Educenter Hugo theme? Submit it to our [showcase](https://gethugothemes.com/showcase). 
+Boycott Beacon is a community-driven project.
 
-Our showcase aims to demonstrate to the world what amazing websites people like you have created utilizing our Hugo themes and to show that Hugo has tremendous capabilities as a Static Site Generator. 
+*   **Reporting Issues:** Find a bug or have a feature request? Please search [existing issues](https://github.com/neural-loop/boycott-beacon-website/issues) and if necessary, [open a new issue](https://github.com/neural-loop/boycott-beacon-website/issues). <!-- << UPDATE REPO URL -->
+*   **Contributing Code:** We welcome pull requests! Please check the main [Boycott Beacon extension repository](https://github.com/neural-loop/boycott-beacon) for overall project guidelines. <!-- << UPDATE REPO URL -->
+*   **Supporting the Project:** Visit our [Support Page](/support/) to see how you can help keep Boycott Beacon running.
 
-View all the websites powered by Educenter Hugo from [here](https://gethugothemes.com/showcase?theme=educenter). 
+## 📝 License
 
-[Submit](https://gethugothemes.com/showcase?submit=show) your Educenter Hugo powered website.
+The specific code modifications and content for the Boycott Beacon website are released under the [MIT License](LICENSE).
 
-<!-- licence -->
-## 📝License
-Copyright &copy; Designed by [Themefisher](https://themefisher.com) & Developed by
-[Gethugothemes](https://gethugothemes.com)
+The underlying Hugo theme structure is based on the "Educenter Hugo" theme by [Themefisher](https://themefisher.com) & [Gethugothemes](https://gethugothemes.com), which is also released under the MIT license (see `themes/boycott-beacon/LICENSE` if you kept the theme structure, or the original LICENSE file if merged).
 
-**Code License:** Released under the [MIT](https://github.com/themefisher/educenter-hugo/blob/master/LICENSE) license.
+## 👍 Acknowledgements
 
-**Image license:** The images are only for demonstration purposes. They have their licenses. We don't have permission to
-share those images.
-
-<!-- resources -->
-## 👍Special Thanks
-- [Bootstrap](https://getbootstrap.com)
-- [Jquery](https://jquery.com)
-- [Themify Icons](https://themify.me/themify-icons)
-- [Slick Slider](https://kenwheeler.github.io/slick/)
-- [Venobox](https://veno.es/venobox/)
-- [Filterizr](https://yiotis.net/filterizr/)
-- [Google Fonts](https://fonts.google.com/)
-- [All Contributors](https://github.com/themefisher/educenter-hugo/graphs/contributors)
-
-
-## 👨‍💻Hire Us
-Besides developing unique, blazing-fast Hugo themes, we also provide customized services. We specialize in creating affordable, high-quality static websites based on Hugo. 
-
-If you need to customize the theme or complete website development from scratch, you can hire us. **Check Our 
-[Services](https://gethugothemes.com/services/?utm_source=educenter_github&utm_medium=referral&utm_campaign=github_theme_readme)**
-
-<!-- premium themes -->
-## 🔥Premium Themes By Us
-| [![Mega-Bundle-HUGO](https://demo.gethugothemes.com/thumbnails/bundle.png?)](https://gethugothemes.com/bundle/?utm_source=educenter_github&utm_medium=referral&utm_campaign=github_theme_readme) | [![Bizcraft](https://demo.gethugothemes.com/thumbnails/bizcraft.png)](https://gethugothemes.com/products/bizcraft/) | [![Meghna](https://demo.gethugothemes.com/thumbnails/bexer.png)](https://gethugothemes.com/products/bexer/) |
-|:---:|:---:|:---:|
-| **Get 55+ Premium Hugo Themes Bundle** | **Bizcraft** | **Bexer** |
+*   **Hugo:** The static site generator powering this website.
+*   **Educenter Theme:** The base theme structure provided by Themefisher/Gethugothemes.
+*   **ImageMagick & wkhtmltoimage:** Tools used for image generation scripts.
+*   **Contributors:** Everyone who helps improve Boycott Beacon!

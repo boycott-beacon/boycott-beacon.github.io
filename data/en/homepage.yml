@@ -1,0 +1,58 @@
+# YAML Configuration for Boycott Beacon Extension Website/Landing Page
+
+slider:
+  enable: true
+  slider_item:
+    - title: "Align Your Browsing with Your Values."
+      content: "Boycott Beacon is a free, open-source browser extension that displays alerts on websites targeted by boycott campaigns you subscribe to. Take control of your online interactions."
+      button:
+        enable: true
+        label: "Install for Chrome"
+        link: "YOUR_CHROME_STORE_LINK_HERE" # Replace with your actual link!
+
+banner_feature:
+  enable: true
+  feature_item:
+    - name: "Real-time Alerts"
+      icon: "ti-bell"
+      content: "Receive discreet notifications via a top banner when you visit a site listed in your subscribed boycott campaigns."
+    - name: "You Choose Campaigns"
+      icon: "ti-list"
+      content: "Subscribe only to the boycott campaign manifests (simple lists) that matter to you. You're in control."
+    - name: "Privacy First"
+      icon: "ti-shield"
+      content: "Works entirely locally. No tracking, no central servers storing your browsing or subscriptions. Fully open-source."
+    - name: "Easy Management"
+      icon: "ti-settings"
+      content: "View details, citations, and temporarily mute alerts per-site via the ribbon. Manage subscriptions via the options page."
+
+cta:
+  enable: true
+  subtitle: "Get Involved" # Changed subtitle
+  title: "Support the Project" # Changed title
+  content: "Boycott Beacon is open-source and community-driven. Help us improve by reporting issues, suggesting features on GitHub, or contributing to development costs." # Changed content
+  button:
+    enable: true
+    label: "Support Us" # Changed label
+    link: "/support/" # <<< Already points to /support/, Good!
+
+how_it_works:
+  enable: true
+  title: "Simple Steps to Get Started" # Changed title
+  # Define the steps
+  steps:
+    - title: "Install Extension"
+      icon: "ti-download" # Example icon
+      description: "Get the Boycott Beacon extension for your browser from the official store."
+      link_label: "Install Now"
+      link: "YOUR_CHROME_STORE_LINK_HERE" # Use the same install link
+    - title: "Subscribe to Campaigns"
+      icon: "ti-list-ol" # Example icon
+      description: "Find public campaign manifest files (JSON lists) and add their URLs in the extension's options."
+      link_label: "Browse Example Campaigns"
+      link: "/campaigns/" # Link to your campaigns page
+    - title: "Browse & See Alerts"
+      icon: "ti-eye" # Example icon
+      description: "The extension automatically checks sites you visit against your subscribed lists and displays a banner if there's a match."
+      link_label: "" # No link needed for this step usually
+      link: ""
