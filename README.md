@@ -5,8 +5,8 @@
 </p>
 
 <h2 align="center">
-  <a target="_blank" href="[YOUR_WEBSITE_URL_HERE]" rel="nofollow">👀 Live Site</a> |
-  <a target="_blank" href="https://pagespeed.web.dev/report?url=[YOUR_WEBSITE_URL_HERE]">Page Speed Test</a>
+  <a target="_blank" href="https://boycott-beacon.github.io" rel="nofollow">👀 Live Site</a> |
+  <a target="_blank" href="https://pagespeed.web.dev/report?url=https://boycott-beacon.github.io">Page Speed Test</a>
 </h2>
 
 <p align="center">
