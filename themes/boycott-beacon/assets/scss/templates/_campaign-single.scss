@@ -1,81 +1,101 @@
-/* Custom Styles for Single Campaign Page (_campaign-single.scss) */
+/* assets/scss/templates/_campaign-single.scss */
 
-.campaign-action-card {
-  .card {
-    // Use existing variables/styles if applicable, e.g., from _common.scss or _variables.scss
-    // border: 1px solid $border-color; // Example if shadow isn't enough
+// ... (keep existing styles for subscribe-btn, author-card, orgs-card etc.) ...
+
+/* Styles for Parsed JSON Content */
+.campaign-json-details {
+  h2 {
+    font-size: 1.8rem; // Adjust heading size as needed
+    color: $text-color-dark;
+  }
+
+  .campaign-tags {
+    font-style: italic;
+    color: $text-color-light;
   }
 }
 
-.subscribe-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease; // Use global transition?
+.campaign-target-block {
+  background-color: lighten($gray, 2%); // Slightly off-white background
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba($black, 0.15); // Use variable
+    box-shadow: 0 0.5rem 1rem rgba($black, 0.08) !important; // Subtle hover shadow
+  }
 
-    &:after {
-      left: 100%; // Animate the pseudo-element
+  .target-domain a {
+    color: $primary-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    i { // Style the external link icon
+      font-size: 0.8em;
+      vertical-align: middle;
+      margin-left: 4px;
     }
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 200%;
-    height: 200%;
-    background: rgba($white, 0.1); // Use variable
-    transform: rotate(30deg);
-    transition: all 0.5s ease; // Slightly slower shine effect
-    // Make sure this doesn't conflict with the main button transition
+  .target-reason,
+  .target-details {
+    p:last-child {
+      margin-bottom: 0; // Remove extra margin from markdownify
+    }
+  }
+
+  .target-image {
+    max-height: 180px; // Limit image height
+    width: auto;      // Maintain aspect ratio
+    max-width: 100%;  // Ensure it doesn't overflow container
+    border: 1px solid $border-color;
+  }
+
+  .target-citations {
+    ul {
+      padding-left: 5px; // Remove default padding
+      list-style-position: inside; // Bullets inside
+    }
+    li {
+      word-break: break-word; // Break long URLs/titles nicely
+      i { // Citation link icon
+        color: $primary-color;
+        opacity: 0.8;
+      }
+    }
+    .citation-source {
+      margin-left: 5px;
+      display: inline-block; // Keep on same line if space allows
+    }
   }
 }
+/* Styles for Campaign Tabs */
+.campaign-nav-tabs {
+  border-bottom: 2px solid $border-color; // Slightly heavier border
 
-.author-card {
-  .card {
-    // Optional: Add common card styles if needed
+  .nav-item {
+    margin-bottom: -2px; // Align bottom border of active tab
   }
-  img {
-    object-fit: cover; // Good practice for profile pics
-  }
-  .social-links {
-    .btn { // Target buttons specifically within social links
-      margin-right: 5px; // Adjust spacing as needed
-      margin-bottom: 5px;
+
+  .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: $text-color-light; // Default tab color
+    padding: 0.75rem 1.25rem; // Adjust padding if needed
+
+    &:hover {
+      border-color: transparent; // Don't show border on hover for inactive
+      color: $primary-color;
+    }
+
+    &.active {
+      color: $primary-color; // Active tab color
+      background-color: $white; // Match page background
+      border-color: $primary-color; // Highlight active tab bottom border
+      font-weight: 600;
     }
   }
 }
 
-.orgs-card {
-  .card {
-    // Optional: Add common card styles if needed
-  }
-}
-
-.org-item {
-  padding-bottom: 15px;
-  margin-bottom: 15px; // Added margin for spacing between items
-  border-bottom: 1px solid $border-color; // Use variable
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-
-  img {
-    // Styles for org logos if needed, e.g., max-width
-  }
-
-  .org-links {
-    margin-top: 5px; // Add space above links
-    .btn { // Target buttons specifically within org links
-      margin-right: 5px;
-      // Consider btn-sm if appropriate
-    }
-  }
+.campaign-tab-content {
+  // Add margin-top via pt-* utility class in HTML instead, more flexible
 }
