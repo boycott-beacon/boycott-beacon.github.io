@@ -13,7 +13,7 @@ author_title: "Testers & Developers"
 # author_socials:
 #   - platform: "github"
 #     name: "GitHub"
-#     link: "https://github.com/neural-loop/boycott-beacon" # Link to your project
+#     link: "https://boycott-beacon.github.io" # Link to your project
 
 # supporting_orgs:
 #   - name: "Test Support Group"

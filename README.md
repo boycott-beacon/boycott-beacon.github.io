@@ -9,16 +9,6 @@
   <a target="_blank" href="https://pagespeed.web.dev/report?url=https://boycott-beacon.github.io">Page Speed Test</a>
 </h2>
 
-<p align="center">
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.115.1" alt="Hugo Version">
-    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.115.1&color=f00&logo=hugo" />
-  </a>
-  <a href="https://github.com/neural-loop/boycott-beacon-website/blob/main/LICENSE"> <!-- << UPDATE LINK TO YOUR REPO -->
-    <img src="https://img.shields.io/github/license/neural-loop/boycott-beacon-website" alt="license"> <!-- << UPDATE REPO -->
-  </a>
-  <!-- Add other relevant badges if desired -->
-</p>
-
 ---
 
 <!-- Optional: Add a screenshot of YOUR website -->
@@ -46,7 +36,7 @@
 1.  **Clone the repository:**
     ```bash
     # Replace with your actual repository URL
-    git clone git@github.com:neural-loop/boycott-beacon-website.git
+    git clone git@github.com:boycott-beacon/boycott-beacon.github.io.git
     cd boycott-beacon-website
     ```
 
@@ -88,14 +78,6 @@ This project includes configuration files for easy deployment:
 *   **Vercel:** Deploy using the Vercel dashboard or CLI. The `vercel.json` and `vercel-build.sh` files provide the necessary configuration. Ensure ImageMagick and wkhtmltoimage are available in the Vercel build environment (may require adjustments to `vercel-build.sh` or build settings).
 
 The build command (`npm run build`) handles image generation and the Hugo build process.
-
-## 🤝 Contributing & Support
-
-Boycott Beacon is a community-driven project.
-
-*   **Reporting Issues:** Find a bug or have a feature request? Please search [existing issues](https://github.com/neural-loop/boycott-beacon-website/issues) and if necessary, [open a new issue](https://github.com/neural-loop/boycott-beacon-website/issues). <!-- << UPDATE REPO URL -->
-*   **Contributing Code:** We welcome pull requests! Please check the main [Boycott Beacon extension repository](https://github.com/neural-loop/boycott-beacon) for overall project guidelines. <!-- << UPDATE REPO URL -->
-*   **Supporting the Project:** Visit our [Support Page](/support/) to see how you can help keep Boycott Beacon running.
 
 ## 📝 License
 
