@@ -1,46 +1,63 @@
 ---
-title: "Test Campaign"
-date: 2024-03-15T10:00:00+06:00
+title: "End Child Labor in Cocoa Supply Chains"
+date: 2023-10-01T00:00:00+00:00
 draft: false
-# meta description
-description: "Join the 'Defend Water Rights' campaign to fight corporate water exploitation. Learn how to boycott polluters, advocate for policy change, and protect communities from privatization and contamination. #WaterIsAHumanRight"
-# notice download link (optional JSON of targeted companies)
-author: "Jane Doe"
-author_title: "Environmental Activist"
-author_image: "images/authors/jane-doe.jpg"
+description: "A campaign targeting major chocolate companies' failure to eliminate child labor from cocoa supply chains despite repeated pledges."
+image: "og.png"
+tags: ["child-labor", "cocoa", "west-africa", "supply-chain"]
+author: "Cocoa Justice Collective"
+author_title: "Ethical Supply Chain Advocates"
+author_image: "author.png"
 author_socials:
   - platform: "twitter"
     name: "Twitter"
-    link: "https://twitter.com/janedoe"
+    link: "https://twitter.com/cocoajustice"
   - platform: "linkedin"
     name: "LinkedIn"
-    link: "https://linkedin.com/in/janedoe"
+    link: "https://linkedin.com/company/cocoa-justice"
 
 supporting_orgs:
-  - name: "Climate Action Now"
-    logo: "images/orgs/climate-action.png"
-    website: "https://climateaction.org"
-    discord: "https://discord.gg/climateaction"
+  - name: "Global Child Rights Foundation"
+    logo: "supportedby.png"
+    website: "https://www.example.org/gcrf"
+  - name: "Ethical Trade Alliance"
+    logo: "supportedby.png"
+    website: "https://www.example.org/ethicaltrade"
 ---
 
 ### About
 
-The **"Defend Water Rights"** campaign exposes corporations that prioritize profit over people by exploiting public water resources. From draining aquifers in drought-stricken regions to contaminating drinking water with toxic chemicals, these companies jeopardize ecosystems and human health. This movement empowers communities to take action through boycotts, advocacy, and education.
+The **"End Child Labor in Cocoa Supply Chains"** campaign exposes the chocolate industry's ongoing exploitation of children in West African cocoa farms. Despite two decades of promises, major manufacturers continue to profit from child labor in their supply chains.
 
 ### Key Issues
 
-- **Privatization**: Companies like Nestlé (BlueTriton) extract millions of gallons of water for bottled products, often at the expense of local communities.
-- **Pollution**: Chemical giants (DuPont, Dow) have contaminated water supplies with PFAS and other toxins.
-- **Over-Extraction**: Beverage corporations (Coca-Cola, PepsiCo) exacerbate water scarcity in vulnerable areas.
+- **Unfulfilled Commitments**: The industry has missed every deadline to eliminate child labor since 2005
+- **Dangerous Work Environments**: Children perform hazardous agricultural work instead of attending school
+- **Systemic Issues**: Complex supply chains enable companies to avoid responsibility
+
+### Evidence
+
+Documented cases include:
+- Minors performing dangerous tasks like clearing brush with machetes
+- Exposure to agricultural chemicals without protective equipment
+- Debt bondage situations trapping families in cycles of exploitation
+- Widespread lack of educational opportunities in cocoa-growing regions
 
 ### How to Participate
 
-1. **Boycott**: Avoid products from implicated companies (see [downloadable list](#)).
-2. **Advocate**: Support legislation like the **Water Affordability, Transparency, and Equity (WATE) Act**.
-3. **Educate**: Share resources on social media with #WaterIsAHumanRight.
+1. **Consumer Action**: Use our [brand guide](#) to make ethical purchasing decisions
+2. **Policy Support**: Contact legislators about the **Child-Free Cocoa Act**
+3. **Awareness**: Share #NoChildLaborCocoa on social media
 
 ### Campaign Demands
 
-- **Transparency**: Public disclosure of corporate water usage and impacts.
-- **Restitution**: Cleanup of polluted water sources and compensation for affected communities.
-- **Policy Change**: Bans on water extraction in drought zones and stricter pollution fines.
+- **Supply Chain Reform**: Implement and fund rigorous monitoring systems
+- **Corporate Transparency**: Publish verified supply chain audits annually
+- **Community Investment**: Fund education and youth programs in cocoa regions
+- **Third-Party Verification**: Establish independent monitoring bodies
+
+### Supporting Research
+
+- [Industry Progress Report 2023](https://www.example.org/cocoa-report) (Global Monitoring Group)
+- [Behind the Chocolate Bar](https://www.example.org/chocolate-investigation) (Journal of Ethical Commerce)
+- [Corporate Social Responsibility Review](https://www.example.org/csr-cocoa) (International Trade Institute)

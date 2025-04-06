@@ -4,10 +4,12 @@ date: 2024-03-15T10:00:00+06:00
 draft: false
 # meta description
 description: "A campaign to hold corporations accountable for water privatization, pollution, and over-extraction."
+image: "og.png" 
+tags: ["environment", "water-rights", "corporate-accountability", "nestle", "pepsi", "coke"]
 # notice download link (optional JSON of targeted companies)
 author: "Jane Doe"
 author_title: "Environmental Activist"
-author_image: "images/authors/jane-doe.jpg"
+author_image: "author.png"
 author_socials:
   - platform: "twitter"
     name: "Twitter"
@@ -18,7 +20,7 @@ author_socials:
 
 supporting_orgs:
   - name: "Climate Action Now"
-    logo: "images/orgs/climate-action.png"
+    logo: "supportedby.png"
     website: "https://climateaction.org"
     discord: "https://discord.gg/climateaction"
 ---
