@@ -1,9 +1,0 @@
-{{ $fileType := path.Ext .Params.download_link | replaceRE "^\\." "" | lower }}
-{{ $icon := cond (eq $fileType "pdf") "ti-file"
-(cond (eq $fileType "doc" "docx") "ti-file"
-(cond (eq $fileType "xls" "xlsx") "ti-file"
-(cond (eq $fileType "ppt" "pptx") "ti-file"
-(cond (eq $fileType "jpg" "jpeg" "png" "gif") "ti-image"
-"ti-file")))) }}
-<span class="h2 d-block"><i class="{{ $icon }}"></i></span>
-<span class="h6 d-block">{{ $fileType }}</span>
