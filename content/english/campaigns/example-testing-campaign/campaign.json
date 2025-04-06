@@ -2,7 +2,7 @@
   "campaignMetadata": {
     "title": "Example Testing Campaign",
     "description": "This campaign manifest is for demonstration and testing purposes only. It lists example domains and reasons.",
-    "hostUrl": "https://boycott-beacon.github.io/campaigns/test-campaign/",
+    "hostUrl": "https://boycott-beacon.github.io/campaigns/example-test-campaign/",
     "launchDate": "2024-01-01",
     "organizer": "Beacon Testing Team",
     "tags": ["testing", "example", "demonstration"],
