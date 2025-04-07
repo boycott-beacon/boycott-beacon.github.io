@@ -49,7 +49,7 @@ how_it_works:
       icon: "ti-download" # Example icon
       description: "Get the Boycott Beacon extension for your browser from the official store."
       link_label: "Install Now"
-      link: "YOUR_CHROME_STORE_LINK_HERE" # Use the same install link
+      link: "https://github.com/boycott-beacon/boycott-beacon-chrome-extension" # Use the same install link
     - title: "Subscribe to Campaigns"
       icon: "ti-list-ol" # Example icon
       description: "Find public campaign manifest files (JSON lists) and add their URLs in the extension's options."
