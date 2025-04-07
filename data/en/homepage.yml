@@ -18,16 +18,16 @@ banner_feature:
   enable: true
   feature_item:
     - name: "Real-time Alerts"
-      icon: "ti-bell"
+      icon: "fa-solid fa-bell"
       content: "Receive discreet notifications via a top banner when you visit a site listed in your subscribed boycott campaigns."
     - name: "You Choose Campaigns"
-      icon: "ti-list"
+      icon: "fa-solid fa-list"
       content: "Subscribe only to the boycott campaign manifests (simple lists) that matter to you. You're in control."
     - name: "Privacy First"
-      icon: "ti-shield"
+      icon: "fa-solid fa-shield"
       content: "Works entirely locally. No tracking, no central servers storing your browsing or subscriptions. Fully open-source."
     - name: "Easy Management"
-      icon: "ti-settings"
+      icon: "fa-solid fa-gears"
       content: "View details, citations, and temporarily mute alerts per-site via the ribbon. Manage subscriptions via the options page."
 
 cta:
@@ -46,17 +46,17 @@ how_it_works:
   # Define the steps
   steps:
     - title: "Install Extension"
-      icon: "ti-download" # Example icon
+      icon: "fa-solid fa-download" # Example icon
       description: "Get the Boycott Beacon extension for your browser from the official store."
       link_label: "Install Now"
       link: "https://github.com/boycott-beacon/boycott-beacon-chrome-extension" # Use the same install link
     - title: "Subscribe to Campaigns"
-      icon: "ti-list-ol" # Example icon
+      icon: "fa-solid fa-list" # Example icon
       description: "Find public campaign manifest files (JSON lists) and add their URLs in the extension's options."
       link_label: "Browse Example Campaigns"
       link: "/campaigns/" # Link to your campaigns page
     - title: "Browse & See Alerts"
-      icon: "ti-eye" # Example icon
+      icon: "fa-solid fa-eye" # Example icon
       description: "The extension automatically checks sites you visit against your subscribed lists and displays a banner if there's a match."
       link_label: "" # No link needed for this step usually
       link: ""
