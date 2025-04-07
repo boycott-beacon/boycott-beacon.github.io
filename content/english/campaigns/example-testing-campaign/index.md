@@ -9,17 +9,21 @@ tags: ["testing", "example", "demonstration"]
 # Optional: Add placeholder author/orgs or remove these sections
 author: "Beacon Dev Team"
 author_title: "Testers & Developers"
-# author_image: "path/to/placeholder-author.png" # Optional
-# author_socials:
-#   - platform: "github"
-#     name: "GitHub"
-#     link: "https://boycott-beacon.github.io" # Link to your project
-
-# supporting_orgs:
-#   - name: "Test Support Group"
-#     logo: "path/to/placeholder-support.png" # Optional
-#     website: "#"
-#     discord: "#"
+author_image: "author.png"
+author_socials:
+  - platform: "twitter"
+    name: "Twitter"
+    link: "https://twitter.com/cocoajustice"
+  - platform: "linkedin"
+    name: "LinkedIn"
+    link: "https://linkedin.com/company/cocoa-justice"
+supporting_orgs:
+  - name: "Testing Support Org 1"
+    logo: "supportedby.png"
+    website: "https://www.example.org/gcrf"
+  - name: "Testing Support Org 2"
+    logo: "supportedby.png"
+    website: "https://www.example.org/ethicaltrade"
 ---
 
 ### About This Test Campaign
