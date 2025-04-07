@@ -7,8 +7,8 @@ slider:
       content: "Boycott Beacon is a free, open-source browser extension that displays alerts on websites targeted by boycott campaigns you subscribe to. Take control of your online interactions."
       button:
         enable: true
-        label: "Install for Chrome"
-        link: "#"
+        label: "Install for Chrome (Pre-Release)"
+        link: "https://github.com/boycott-beacon/boycott-beacon-chrome-extension"
       button2:
         enable: true
         label: "Browse Campaigns"
