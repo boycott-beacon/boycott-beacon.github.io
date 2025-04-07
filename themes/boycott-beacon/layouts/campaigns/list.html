@@ -2,12 +2,6 @@
 
 <section class="section">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Explore Boycott Campaigns</h2>
-        <p class="lead">{{ .Description | default "Browse active campaigns and learn more about their goals and targets." }}</p>
-      </div>
-    </div>
 
     <div class="row">
       {{ $paginator := .Paginate .Data.Pages }}

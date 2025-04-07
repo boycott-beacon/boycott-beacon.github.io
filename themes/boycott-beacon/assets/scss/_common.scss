@@ -283,8 +283,6 @@ textarea.form-control{
   height: 500px;
 }
 
-
-
 .post-thumb-sm {
   max-width: 100px;
   max-height: 100px;
@@ -318,14 +316,42 @@ textarea.form-control{
 }
 
 
+// === START .content SECTION - WITH LINK & LIST FIXES ===
 .content {
+  // WARNING: This global rule applies margin to ALL descendants.
   * {
     margin-bottom: 20px;
   }
 
-  a {
-    text-decoration: underline;
+  // --- FIX: LINK STYLES (Excluding Buttons) ---
+  a:not(.btn) {
+    color: $primary-color; // Default color for non-button content links
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+      border-bottom-color: $primary-color;
+    }
+
+    // Keep external link icon styling working for links inside .content
+    &[target='_blank'] {
+      // The ::after styling will be inherited from the global rule unless overridden
+    }
   }
+
+  // --- FIX: Ensure Buttons Are Unaffected ---
+  a.btn {
+
+    // Color is handled by specific .btn-* classes, no need to set default here
+    &:hover {
+      // Hover is handled entirely by button styles, no border hover needed here
+      border-bottom-color: transparent !important; // Explicitly prevent border hover
+    }
+  }
+  // --- END LINK FIXES ---
 
   h1,
   h2,
@@ -333,40 +359,62 @@ textarea.form-control{
   h4,
   h5,
   h6 {
-    margin-bottom: 15px;
+    margin-bottom: 15px; // Specific heading margin (overrides * rule)
   }
 
+  // --- LIST STYLES - REVISED FOR CONSISTENCY ---
   ol {
-    padding-left: 20px;
+    padding-left: 20px; // Keep standard ordered list padding
   }
 
   ul {
-    padding-left: 0;
+    padding-left: 0; // Reset default ul padding
+    list-style-type: none; // Ensure list style is none globally for ul within .content
+  }
 
-    li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 10px;
-      list-style-type: none;
+  // --- Styling for ALL list items (ul li and ol li) ---
+  li { // Target both ul>li and ol>li
+    // Control spacing BETWEEN list items explicitly, overriding the global '*' rule
+    margin-bottom: 15px; // <<< ADJUST THIS VALUE (e.g., 10px, 15px, 20px) for desired space BETWEEN items
 
-      &::before {
-        position: absolute;
-        content: "\e65d";
-        font-family: $icon-font;
-        font-size: 14px;
-        left: 0;
-        top: 1px;
-        color: $primary-color;
-        transition: .3s ease;
-      }
+    // Ensure paragraphs *inside* list items have reasonable spacing, overriding the global '*' rule
+    p {
+      margin-bottom: 10px; // <<< ADJUST THIS VALUE for spacing between paragraphs *within* a single list item
+    }
+
+    // CRITICAL FIX: Remove bottom margin from the *last element* (likely a <p>) inside ANY list item.
+    > *:last-child {
+      margin-bottom: 0 !important; // Use !important to ensure override of global '*'
     }
   }
 
+  // Specific UL list item styling (for the bullet point)
+  ul li {
+    position: relative; // Keep for ::before positioning
+    padding-left: 25px; // Increase padding slightly to accommodate bullet + space
+
+    &::before {
+      position: absolute;
+      content: "\e65d"; // Keep icon
+      font-family: $icon-font;
+      font-size: 14px;
+      left: 0; // Position bullet at the start
+      top: 0.5em; // Adjust vertical alignment (relative to font size)
+      transform: translateY(-50%); // Center vertically relative to 'top'
+      line-height: 1; // Prevent icon from affecting line height itself
+      color: $primary-color;
+      transition: .3s ease;
+    }
+  }
+  // --- END LIST STYLE FIXES ---
+
+
+  // --- Keep other specific styles ---
   table {
     text-align: left;
     width: 100%;
     max-width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; // Keep bootstrap default or adjust
     border: 1px solid #dee2e6;
 
     th,
@@ -382,28 +430,27 @@ textarea.form-control{
 
     tbody {
       background: $light;
-
       td {
         text-align: left !important;
       }
     }
   }
 
-
   blockquote {
     p {
-      margin-bottom: 0;
+      margin-bottom: 0; // Keep as is
       color: $text-color;
       font-style: italic !important;
     }
   }
 
-
   pre {
     padding: 10px 20px;
     background: $light;
+    margin-bottom: 20px; // Ensure pre blocks also get margin from global rule or explicitly add
   }
-}
+
+} // === END OF .content SECTION ===
 
 .teacher-thumb-sm{
   height: 85px;
@@ -443,4 +490,3 @@ a[target='_blank'] {
   content: none !important; /* Remove the icon content */
   display: none !important; /* Ensure it takes no space */
 }
-
