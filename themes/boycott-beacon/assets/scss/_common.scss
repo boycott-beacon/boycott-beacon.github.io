@@ -391,23 +391,29 @@ textarea.form-control{
   // Specific UL list item styling (for the bullet point)
   ul li {
     position: relative; // Keep for ::before positioning
-    padding-left: 25px; // Increase padding slightly to accommodate bullet + space
-    line-height: 1.5em;
+    padding-left: 25px; // Keep padding
+    line-height: 1.5em; // Keep existing line-height
 
     &::before {
       position: absolute;
-      content: "\e65d"; // Keep icon
-      font-family: $icon-font;
-      font-size: 14px;
-      left: 0; // Position bullet at the start
-      top: 0.74em; // Adjust vertical alignment (relative to font size)
-      transform: translateY(-50%); // Center vertically relative to 'top'
-      line-height: 1; // Prevent icon from affecting line height itself
-      color: $primary-color;
-      transition: .3s ease;
+      content: "\f144";                 // <<< CHANGED: Font Awesome Unicode for fa-circle-right
+      font-family: 'Font Awesome 6 Free'; // <<< CHANGED: Use Font Awesome font family
+      font-weight: 900;                 // <<< ADDED: Required for FA solid icons
+      font-size: 14px;                  // Keep original size (adjust if needed)
+      left: 0;                          // Keep positioning
+      top: 0.74em;                      // Keep original vertical alignment (adjust if needed)
+      transform: translateY(-50%);      // Keep centering
+      line-height: 1;                   // Keep line height control
+      color: $primary-color;            // Keep color
+      transition: .3s ease;             // Keep transition
+      // Recommended Font Awesome properties for pseudo-elements
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
     }
   }
-  // --- END LIST STYLE FIXES ---
 
 
   // --- Keep other specific styles ---
@@ -463,17 +469,21 @@ textarea.form-control{
 /* Add external link icon (General Rule) */
 a[target='_blank'] {
   &::after {
-    content: "\e732"; /* Unicode for ti-new-window */
-    font-family: $icon-font;
+    content: "\f35d";                      // <<< CHANGED: FA Unicode for fa-arrow-up-right-from-square
+    font-family: 'Font Awesome 6 Free';  // <<< CHANGED: Use Font Awesome font family
+    font-weight: 900;                      // <<< ADDED: Required for FA solid icons
     display: inline-block;
-    font-size: 0.8em; /* Slightly smaller than link text */
-    font-weight: normal; /* Avoid inheriting bold */
-    margin-left: 4px; /* Spacing */
-    vertical-align: baseline; /* Alignment */
-    color: inherit; /* Use the link's color */
-    text-decoration: none; /* Remove underline from icon */
-    transition: color 0.2s ease; /* Match parent link transition */
-    speak: none; /* Prevent reading out loud */
+    font-size: 0.8em;                      // Keep original size or adjust
+    font-style: normal;                   // Recommended for FA
+    font-variant: normal;                 // Recommended for FA
+    text-rendering: auto;                // Recommended for FA
+    -webkit-font-smoothing: antialiased; // Recommended for FA
+    margin-left: 4px;                      // Keep spacing
+    vertical-align: baseline;              // Keep alignment (or try 'middle', 'text-bottom' if needed)
+    color: inherit;                        // Keep color inheritance
+    text-decoration: none;                 // Keep underline removal
+    transition: color 0.2s ease;           // Keep transition
+    speak: none;                           // Keep accessibility attribute
   }
 }
 

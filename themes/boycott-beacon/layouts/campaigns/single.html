@@ -90,7 +90,7 @@
                     <ul class="list-unstyled mt-2 small">
                       {{ range . }}
                       <li class="mb-1">
-                        <i class="ti-link mr-1"></i>
+                        <i class="fa-solid fa-link mr-1"></i>
                         <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
                         {{ if or .source .date }}
                         <span class="text-muted citation-source">
@@ -114,7 +114,7 @@
 
                   {{/* Share URL */}}
                   {{ if and $target.shareUrl (ne $target.shareUrl (printf "https://%s" $target.domain)) }}
-                  <p class="small mt-3"><i class="ti-sharethis mr-1"></i><strong>Share Link:</strong> <a href="{{ $target.shareUrl }}" target="_blank" rel="noopener noreferrer">{{ $target.shareUrl }}</a></p>
+                  <p class="small mt-3"><i class="fa-solid fa-share mr-1"></i><strong>Share Link:</strong> <a href="{{ $target.shareUrl }}" target="_blank" rel="noopener noreferrer">{{ $target.shareUrl }}</a></p>
                   {{ end }}
 
                 </div>
@@ -193,7 +193,7 @@
                   {{ if eq .platform "twitter" }}
                   <i class="fa-brands fa-x-twitter"></i>
                   {{ else }}
-                  <i class="ti-{{ .platform }}"></i> {{/* Assumes platform name matches ti- icon suffix */}}
+                  <i class="fa-brands fa-{{ .platform }}"></i> {{/* Assumes platform name matches ti- icon suffix */}}
                   {{ end }}
                   {{/* --- END MODIFIED ICON LOGIC --- */}}
                   {{ .name }}
@@ -229,12 +229,12 @@
                 <div class="org-links mt-2">
                   {{ if $org.website }}
                   <a href="{{ $org.website }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary mr-2 mb-2">
-                    <i class="ti-world"></i> Website
+                    <i class="fa-solid fa-globe"></i> Website
                   </a>
                   {{ end }}
                   {{ if $org.discord }}
                   <a href="{{ $org.discord }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary mr-2 mb-2">
-                    <i class="ti-comments"></i> Discord
+                    <i class="fa-brands fa-discord"></i> Discord
                   </a>
                   {{ end }}
                 </div>

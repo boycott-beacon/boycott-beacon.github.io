@@ -20,7 +20,7 @@
           <!-- Ancestor Links -->
           {{- range $index, $value := .Ancestors.Reverse }}
           {{- if not .IsHome }} {{/* <<< MORE EXPLICIT CHECK */}}
-          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item h5"><i class="fa-solid fa-angle-right text-white"></i></li>
           <li class="list-inline-item h3" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             {{- $data.Add "counter" 1 }}
             <a class="text-primary" itemprop="item" href="{{ .Permalink }}">
@@ -32,7 +32,7 @@
           {{- end }}
 
           <!-- Current Page Link -->
-          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item h5"><i class="fa-solid fa-angle-right text-white"></i></li>
           <li class="list-inline-item text-white h3 font-secondary" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             {{- $data.Add "counter" 1 }}
             <span itemprop="name">{{ .Title }}</span>
