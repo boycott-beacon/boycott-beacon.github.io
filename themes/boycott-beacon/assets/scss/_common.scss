@@ -223,7 +223,20 @@ a h4{
 
 .custom-breadcrumb {
   li {
-    &.nasted {
+    a { // <<< Target links within list items
+      text-decoration: none !important; // Ensure no default underline
+      border-bottom: 2px solid transparent; // Reserve space
+      padding-bottom: 1px; // Gap
+      transition: color 0.2s ease, border-color 0.2s ease; // Transition for color and border
+
+      &:hover {
+        // Keep existing hover colors if defined by specific classes like text-primary
+        // We just need to show the border
+        border-bottom-color: $white; // Use white for the underline on the dark overlay bg
+      }
+    }
+
+    &.nasted { // Keep nasted styles as they were
       position: relative;
       padding-left: 25px;
 
