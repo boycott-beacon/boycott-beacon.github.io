@@ -397,3 +397,40 @@ textarea.form-control{
   width: 85px;
   object-fit: cover;
 }
+
+.border-bottom {
+  border-bottom: 5px solid #dee2e6!important;
+}
+
+/* Add external link icon (General Rule) */
+a[target='_blank'] {
+  &::after {
+    content: "\e732"; /* Unicode for ti-new-window */
+    font-family: $icon-font;
+    display: inline-block;
+    font-size: 0.8em; /* Slightly smaller than link text */
+    font-weight: normal; /* Avoid inheriting bold */
+    margin-left: 4px; /* Spacing */
+    vertical-align: baseline; /* Alignment */
+    color: inherit; /* Use the link's color */
+    text-decoration: none; /* Remove underline from icon */
+    transition: color 0.2s ease; /* Match parent link transition */
+    speak: none; /* Prevent reading out loud */
+  }
+}
+
+/* --- Overrides to REMOVE external link icon in specific contexts --- */
+
+// Social icons in header, footer, team cards, campaign sidebar/orgs, OG preview runner
+.top-header .list-inline a[target='_blank']::after,
+.footer .list-inline a[target='_blank']::after,
+.team-card-socials a[target='_blank']::after,
+.author-card .social-links a[target='_blank']::after,
+.orgs-card .org-links a[target='_blank']::after,
+.runner-icons a[target='_blank']::after,
+  // Explicitly target the styled social icons in the OG preview overlay
+.social-share-overlay .social-icon[target='_blank']::after {
+  content: none !important; /* Remove the icon content */
+  display: none !important; /* Ensure it takes no space */
+}
+

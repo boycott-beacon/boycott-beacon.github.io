@@ -65,10 +65,10 @@
               <h3 class="mb-3">Campaign Targets</h3> {{/* Heading for the targets list */}}
               <div class="target-list">
                 {{ range $index, $target := $campaignData.targets }}
-                <div class="campaign-target-block mb-4 p-3 border rounded solid-sm">
+                <div class="campaign-target-block mb-4 p-3 border solid-sm">
                   <h4 class="target-domain mb-2">
                     <a href="https://{{ $target.domain }}" target="_blank" rel="noopener noreferrer">
-                      {{ $target.domain }} <i class="ti-new-window small"></i>
+                      {{ $target.domain }}
                     </a>
                   </h4>
                   <p class="target-reason"><strong>Reason:</strong> {{ $target.reason | markdownify }}</p>
@@ -158,7 +158,7 @@
               <i class="ti-bell mr-2"></i> Subscribe
               </a>
               <p class="small text-muted mt-2 mb-0">
-                Requires <a href="https://boycottbeacon.org/install" target="_blank">Boycott Beacon extension</a>
+                Requires Boycott Beacon extension
               </p>
             </div>
           </div>

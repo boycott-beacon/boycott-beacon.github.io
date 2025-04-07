@@ -14,28 +14,31 @@
 }
 .campaign-target-block {
   background-color: lighten($gray, 2%);
-  // Apply the new shadow color
-  box-shadow: -5px 5px 0px 0px $border-color; // <<< CHANGED COLOR
+  box-shadow: -5px 5px 0px 0px $border-color;
   transition: box-shadow 0.2s ease-in-out;
-  border: 0 !important; // Keep border removed
+  border: 0 !important;
   padding: 1rem;
   margin-bottom: 1.5rem;
   border-radius: 0;
 
-  &:hover {
-    // Apply the new hover shadow color
-    box-shadow: -6px 6px 0px 0px darken($border-color, 10%); // <<< CHANGED COLOR & darkened
-  }
   .target-domain a {
     color: $primary-color;
-    text-decoration: none;
+    // text-decoration: none; // <<< REMOVE this line (or ensure it's gone)
+    text-decoration: none !important; // <<< ADD: Explicitly remove default underline
+    border-bottom: 2px solid transparent; // <<< ADD: Reserve space for underline
+    padding-bottom: 1px; // <<< ADD: Small gap between text and underline
+    transition: color 0.2s ease, border-color 0.2s ease; // <<< ADD: Explicit transition for border
+
     &:hover {
-      text-decoration: underline;
+      // text-decoration: underline; // <<< REMOVE this line
+      color: darken($primary-color, 10%); // <<< Optional: Slight darken on hover
+      border-bottom-color: $primary-color; // <<< ADD: Set border color on hover
     }
     i { // Style the external link icon
       font-size: 0.8em;
-      vertical-align: middle;
-      margin-left: 4px;
+      font-weight: 800;
+      line-height: normal;
+      vertical-align: text-top;
     }
   }
 
@@ -60,9 +63,24 @@
     }
     li {
       word-break: break-word; // Break long URLs/titles nicely
-      i { // Citation link icon
+
+      a { // <<< Target citation links specifically
+        color: $text-color; // <<< ADD: Define base color
+        text-decoration: none !important; // <<< ADD: Explicitly remove default underline
+        border-bottom: 2px solid transparent; // <<< ADD: Reserve space
+        padding-bottom: 1px; // <<< ADD: Small gap
+        transition: color 0.2s ease, border-color 0.2s ease; // <<< ADD: Explicit transition
+
+        &:hover {
+          color: $primary-color; // <<< Standard hover color
+          border-bottom-color: $primary-color; // <<< ADD: Set border color on hover
+        }
+      }
+
+      i { // Citation link icon (ti-link) - keep styling if desired
         color: $primary-color;
         opacity: 0.8;
+        margin-right: 2px; // Slight spacing if needed
       }
     }
     .citation-source {
@@ -71,6 +89,7 @@
     }
   }
 }
+
 /* Styles for Campaign Tabs */
 .campaign-nav-tabs {
   border-bottom: 5px solid $border-color; // Slightly heavier border
@@ -85,11 +104,6 @@
     color: $text-color-light; // Default tab color
     padding: 1px 1.25rem; // Adjust padding if needed
     margin-bottom: -3px;
-
-    &:hover {
-      border-color: $dark-accent; // Don't show border on hover for inactive
-      color: $primary-color;
-    }
 
     &.active {
       color: $primary-color; // Active tab color
@@ -109,9 +123,4 @@
   box-shadow: -5px 5px 0px 0px $border-color; // <<< CHANGED COLOR
   transition: box-shadow 0.2s ease-in-out;
   border-radius: 0;
-
-  &:hover {
-    // Match the list card hover style
-    box-shadow: -6px 6px 0px 0px darken($border-color, 10%); // <<< CHANGED COLOR & darkened
-  }
 }
