@@ -48,10 +48,10 @@
 }
 
 .hover-shadow {
-  transition: .3s ease;
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 4px 25px 0px rgba(27, 39, 71, 0.15);
+    box-shadow: -6px 6px 0px 0px rgba($primary-color, 0.15); // Example: larger offset, primary color hint
   }
 }
 

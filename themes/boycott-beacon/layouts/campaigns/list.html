@@ -14,18 +14,17 @@
       {{ range $paginator.Pages }}
       {{/* Use 3 columns on lg and md, 2 on sm */}}
       <div class="col-lg-4 col-md-4 col-sm-6 mb-4 d-flex align-items-stretch">
-        <a href="{{ .Permalink }}" class="card campaign-card-link rounded-0 w-100 hover-shadow text-decoration-none">
+        {{/* Link now uses primary-offset-border */}}
 
-          {{/* --- Image Handling: Look for og.png within the page bundle --- */}}
+        <a href="{{ .Permalink }}" class="card campaign-card-link rounded-0 w-100 text-decoration-none">
+
+        {{/* --- Image Handling --- */}}
           {{ $ogImageResource := .Resources.GetMatch "og.png" }}
-
           {{ if $ogImageResource }}
-          {{/* Resize based on width, height is proportional. Choose a width slightly larger than needed for quality. */}}
-          {{ $resized := $ogImageResource.Resize "600x q90" }} {{/* <<< CHANGED: Use .Resize, e.g., 600px wide */}}
-          <img src="{{ $resized.RelPermalink }}" class="card-img-top campaign-card-image rounded-0" alt="{{ .Title }} campaign preview"> {{/* Added campaign-card-image class */}}
+          {{ $resized := $ogImageResource.Resize "600x q90" }}
+          <img src="{{ $resized.RelPermalink }}" class="card-img-top campaign-card-image rounded-0" alt="{{ .Title }} campaign preview">
           {{ else }}
-          {{/* Placeholder if og.png is not found */}}
-          <div class="card-img-top campaign-card-image-placeholder rounded-0 bg-light d-flex align-items-center justify-content-center"> {{/* Added placeholder class */}}
+          <div class="card-img-top campaign-card-image-placeholder rounded-0 bg-light d-flex align-items-center justify-content-center">
             <i class="ti-flag-alt-2" style="font-size: 50px; color: #ccc;"></i>
           </div>
           {{ end }}
@@ -34,7 +33,6 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title mb-2">{{ .Title }}</h5>
             <p class="card-text small text-muted flex-grow-1">{{ .Description | truncate 120 }}</p>
-
             {{ with .Params.tags }}
             <div class="mt-auto pt-2">
               {{ range . }}
@@ -44,8 +42,7 @@
             {{ end }}
           </div>
         </a>
-      </div>
-      {{ end }}
+      </div>      {{ end }}
     </div>
 
     <!-- Pagination -->

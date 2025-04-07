@@ -1,7 +1,5 @@
 /* assets/scss/templates/_campaign-single.scss */
 
-// ... (keep existing styles for subscribe-btn, author-card, orgs-card etc.) ...
-
 /* Styles for Parsed JSON Content */
 .campaign-json-details {
   h2 {
@@ -14,15 +12,20 @@
     color: $text-color-light;
   }
 }
-
 .campaign-target-block {
-  background-color: lighten($gray, 2%); // Slightly off-white background
+  background-color: lighten($gray, 2%);
+  // Apply the new shadow color
+  box-shadow: -5px 5px 0px 0px $border-color; // <<< CHANGED COLOR
   transition: box-shadow 0.2s ease-in-out;
+  border: 0 !important; // Keep border removed
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0;
 
   &:hover {
-    box-shadow: 0 0.5rem 1rem rgba($black, 0.08) !important; // Subtle hover shadow
+    // Apply the new hover shadow color
+    box-shadow: -6px 6px 0px 0px darken($border-color, 10%); // <<< CHANGED COLOR & darkened
   }
-
   .target-domain a {
     color: $primary-color;
     text-decoration: none;
@@ -70,7 +73,7 @@
 }
 /* Styles for Campaign Tabs */
 .campaign-nav-tabs {
-  border-bottom: 2px solid $border-color; // Slightly heavier border
+  border-bottom: 5px solid $border-color; // Slightly heavier border
 
   .nav-item {
     margin-bottom: -2px; // Align bottom border of active tab
@@ -78,12 +81,13 @@
 
   .nav-link {
     border: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 5px solid transparent;
     color: $text-color-light; // Default tab color
-    padding: 0.75rem 1.25rem; // Adjust padding if needed
+    padding: 1px 1.25rem; // Adjust padding if needed
+    margin-bottom: -3px;
 
     &:hover {
-      border-color: transparent; // Don't show border on hover for inactive
+      border-color: $dark-accent; // Don't show border on hover for inactive
       color: $primary-color;
     }
 
@@ -96,6 +100,18 @@
   }
 }
 
-.campaign-tab-content {
-  // Add margin-top via pt-* utility class in HTML instead, more flexible
+// --- Update styles for the sidebar cards ---
+.campaign-action-card .card,
+.author-card .card,
+.orgs-card .card {
+  border: 0 !important;
+  // Use $border-color for the shadow
+  box-shadow: -5px 5px 0px 0px $border-color; // <<< CHANGED COLOR
+  transition: box-shadow 0.2s ease-in-out;
+  border-radius: 0;
+
+  &:hover {
+    // Match the list card hover style
+    box-shadow: -6px 6px 0px 0px darken($border-color, 10%); // <<< CHANGED COLOR & darkened
+  }
 }

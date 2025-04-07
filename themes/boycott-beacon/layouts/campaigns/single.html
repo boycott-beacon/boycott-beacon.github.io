@@ -65,7 +65,7 @@
               <h3 class="mb-3">Campaign Targets</h3> {{/* Heading for the targets list */}}
               <div class="target-list">
                 {{ range $index, $target := $campaignData.targets }}
-                <div class="campaign-target-block mb-4 p-3 border rounded shadow-sm">
+                <div class="campaign-target-block mb-4 p-3 border rounded solid-sm">
                   <h4 class="target-domain mb-2">
                     <a href="https://{{ $target.domain }}" target="_blank" rel="noopener noreferrer">
                       {{ $target.domain }} <i class="ti-new-window small"></i>
@@ -144,10 +144,12 @@
       </div> {{/* End col-md-8 */}}
 
       <!-- Right Sidebar Column (Unchanged) -->
+      <!-- Right Sidebar Column -->
       <div class="col-md-4 order-1 order-md-2 mb-4 mb-md-0">
         <!-- Subscribe to Campaign -->
         <div class="campaign-action-card mb-4">
-          <div class="card border-0 shadow-sm">
+          {{/* Card uses , no border-0 or shadow-sm */}}
+          <div class="card ">
             <div class="card-body text-center p-4">
               <h4 class="card-title mb-3">Join This Campaign</h4>
               <a href="{{ $jsonResource.RelPermalink | default "#" }}"
@@ -164,7 +166,8 @@
         <!-- Campaign Author -->
         {{ if .Params.author }}
         <div class="author-card mb-4">
-          <div class="card border-0 shadow-sm">
+          {{/* Card uses , no border-0 or shadow-sm */}}
+          <div class="card ">
             <div class="card-body p-4">
               <h5 class="card-title mb-3">Campaign Author</h5>
               <div class="d-flex align-items-center mb-3">
@@ -182,7 +185,6 @@
                   {{ end }}
                 </div>
               </div>
-
               {{ if .Params.author_socials }}
               <div class="social-links mt-2">
                 {{ range .Params.author_socials }}
@@ -197,17 +199,15 @@
         </div>
         {{ end }}
 
-        <!-- Supporting Organizations (Handling Multiple Orgs) -->
+        <!-- Supporting Organizations -->
         {{ if .Params.supporting_orgs }}
-        <div class="orgs-card mb-4"> <!-- Consistent spacing -->
-          <div class="card border-0 shadow-sm">
+        <div class="orgs-card mb-4">
+          {{/* Card uses , no border-0 or shadow-sm */}}
+          <div class="card ">
             <div class="card-body p-4">
               <h5 class="card-title mb-3">Supported By</h5>
-              <!-- Loop through each organization -->
               {{ range $index, $org := .Params.supporting_orgs }}
-              <!-- Add separator for items after the first -->
               <div class="org-item {{ if gt $index 0 }}mt-4 pt-4 border-top{{ end }}">
-                <!-- Use d-flex similar to author -->
                 <div class="d-flex align-items-center mb-3">
                   {{ if $org.logo }}
                   <img src="{{ $org.logo }}"
@@ -217,11 +217,8 @@
                   {{ end }}
                   <div>
                     <h6 class="mb-1">{{ $org.name }}</h6>
-                    <!-- Optional tagline could go here -->
                   </div>
                 </div>
-
-                <!-- Links section, styled like author's social links -->
                 <div class="org-links mt-2">
                   {{ if $org.website }}
                   <a href="{{ $org.website }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary mr-2 mb-2">
@@ -233,16 +230,14 @@
                     <i class="ti-comments"></i> Discord
                   </a>
                   {{ end }}
-                  <!-- Add more links here if needed -->
                 </div>
-              </div> <!-- End org-item -->
-              {{ end }} <!-- End range loop -->
+              </div>
+              {{ end }}
             </div>
           </div>
         </div>
-        {{ end }} <!-- End supporting_orgs check -->
-      </div> <!-- Make sure this closing div matches your overall structure -->
-
+        {{ end }}
+      </div>
     </div>
   </div>
 </section>

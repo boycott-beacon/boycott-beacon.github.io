@@ -8,7 +8,6 @@
   &:hover {
     color: inherit;
     text-decoration: none;
-    // .hover-shadow class provides visual feedback
   }
 
   // --- Image Styling ---
@@ -17,9 +16,7 @@
     display: block;    // Force block display
     width: 100%;       // Full width
     object-fit: cover; // Cover the area
-    // Try 'contain' if 'cover' still clips content undesirably.
     object-position: center top; // Prioritize top (adjust if needed: center center, center bottom)
-    // vertical-align: middle; // Might help in some flex contexts, often default for img
   }
 
   // --- Placeholder Styling ---
@@ -32,11 +29,6 @@
     color: #ccc;
   }
 
-  // --- Other Card Styles ---
-  .card-body {
-    // No changes needed here, rely on flexbox from parent/internal classes
-  }
-
   .badge-light {
     background-color: $light;
     color: $text-color;
@@ -44,7 +36,15 @@
     padding: 0.3em 0.6em;
   }
 }
+.campaign-card-link.card {
+  border: 0 !important;
+  // Use $border-color for the shadow
+  box-shadow: -5px 5px 0px 0px $border-color; // <<< CHANGED COLOR
+  transition: box-shadow 0.2s ease-in-out;
+  border-radius: 0;
 
-// --- Ensure no other conflicting styles ---
-// Make sure there are no global 'img' or '.card-img-top' rules outside
-// this block that might be setting height: auto !important; or similar.
+  &:hover {
+    // Slightly larger offset and slightly darker shadow color on hover
+    box-shadow: -6px 6px 0px 0px darken($border-color, 10%); // <<< CHANGED COLOR & darkened
+  }
+}
