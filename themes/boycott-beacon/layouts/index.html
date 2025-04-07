@@ -1,7 +1,6 @@
 {{ define "main" }}
 
 {{ $data := index site.Data site.Language.Lang }}
-
 <!-- hero section -->
 {{ if $data.homepage.slider.enable }}
 {{ with $data.homepage.slider }}
@@ -12,9 +11,18 @@
         {{ with index .slider_item 0 }}
         <h1 class="text-white">{{ .title | markdownify }}</h1>
         <p class="text-muted mb-4">{{ .content | markdownify }}</p>
-        {{ if .button.enable }}
-        <a href="{{ .button.link | absLangURL }}" class="btn btn-primary">{{ .button.label }}</a>
-        {{ end }}
+        {{/* --- Button Rendering --- */}}
+        <div class="hero-buttons"> {{/* Optional wrapper for buttons */}}
+          {{ if .button.enable }}
+          <a href="{{ .button.link | absLangURL }}" class="btn btn-primary mr-2 mb-2">{{ .button.label }}</a> {{/* Added mr-2 mb-2 for spacing */}}
+          {{ end }}
+          {{ if .button2.enable }}
+          {{/* Determine button style - default to primary if not specified */}}
+          {{ $button2_style := .button2.style | default "btn-primary" }}
+          <a href="{{ .button2.link | absLangURL }}" class="btn btn-primary mb-2">{{ .button2.label }}</a> {{/* Added mb-2 for spacing */}}
+          {{ end }}
+        </div>
+        {{/* --- End Button Rendering --- */}}
         {{ end }}
       </div>
     </div>
@@ -23,7 +31,6 @@
 {{ end }}
 {{ end }}
 <!-- /hero section -->
-
 
 <!-- banner-feature -->
 {{ if $data.homepage.banner_feature.enable }}

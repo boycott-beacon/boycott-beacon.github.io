@@ -8,8 +8,12 @@ slider:
       button:
         enable: true
         label: "Install for Chrome"
-        link: "YOUR_CHROME_STORE_LINK_HERE" # Replace with your actual link!
-
+        link: "#"
+      button2:
+        enable: true
+        label: "Browse Campaigns"
+        link: "/campaigns/"
+        style: "btn-outline-primary"
 banner_feature:
   enable: true
   feature_item:
