@@ -26,9 +26,9 @@
             <img src="/logo.png" alt="{{ site.Title }}" class="img-fluid">
           </a>
           <ul class="list-unstyled">
-            {{ with site.Params.email }}<li class="mb-3"><i class="ti-email mr-2"></i> {{ . }}</li>{{ end }}
-            {{ with site.Params.chrome_web_store_link }}<li class="mb-3"><i class="ti-shopping-cart mr-2"></i> <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-color">Chrome Web Store</a></li>{{ end }}
-            {{ with site.Params.github_repo }}<li class="mb-3"><i class="ti-github mr-2"></i> <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-color">GitHub Repository</a></li>{{ end }}
+            {{ with site.Params.email }}<li class="mb-3"><i class="fa-solid fa-envelope mr-2"></i> {{ . }}</li>{{ end }}
+            {{ with site.Params.chrome_web_store_link }}<li class="mb-3"><i class="fa-solid fa-bag-shopping mr-2"></i> <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-color">Chrome Web Store</a></li>{{ end }}
+            {{ with site.Params.github_repo }}<li class="mb-3"><i class="fa-brands fa-github mr-2"></i> <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-color">GitHub Repository</a></li>{{ end }}
           </ul>
         </div>
 

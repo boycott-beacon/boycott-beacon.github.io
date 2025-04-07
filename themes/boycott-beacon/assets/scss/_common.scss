@@ -392,6 +392,7 @@ textarea.form-control{
   ul li {
     position: relative; // Keep for ::before positioning
     padding-left: 25px; // Increase padding slightly to accommodate bullet + space
+    line-height: 1.5em;
 
     &::before {
       position: absolute;
@@ -399,7 +400,7 @@ textarea.form-control{
       font-family: $icon-font;
       font-size: 14px;
       left: 0; // Position bullet at the start
-      top: 0.5em; // Adjust vertical alignment (relative to font size)
+      top: 0.74em; // Adjust vertical alignment (relative to font size)
       transform: translateY(-50%); // Center vertically relative to 'top'
       line-height: 1; // Prevent icon from affecting line height itself
       color: $primary-color;
