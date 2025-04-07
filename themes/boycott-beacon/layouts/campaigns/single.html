@@ -184,11 +184,19 @@
                   {{ end }}
                 </div>
               </div>
+              {{/* Inside the .author-card div */}}
               {{ if .Params.author_socials }}
               <div class="social-links mt-2">
                 {{ range .Params.author_socials }}
                 <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary mr-2 mb-2">
-                  <i class="ti-{{ .platform }}"></i> {{ .name }}
+                  {{/* --- MODIFIED ICON LOGIC --- */}}
+                  {{ if eq .platform "twitter" }}
+                  <i class="fa-brands fa-x-twitter"></i>
+                  {{ else }}
+                  <i class="ti-{{ .platform }}"></i> {{/* Assumes platform name matches ti- icon suffix */}}
+                  {{ end }}
+                  {{/* --- END MODIFIED ICON LOGIC --- */}}
+                  {{ .name }}
                 </a>
                 {{ end }}
               </div>

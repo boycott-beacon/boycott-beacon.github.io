@@ -484,9 +484,15 @@ a[target='_blank'] {
 .team-card-socials a[target='_blank']::after,
 .author-card .social-links a[target='_blank']::after,
 .orgs-card .org-links a[target='_blank']::after,
-.runner-icons a[target='_blank']::after,
-  // Explicitly target the styled social icons in the OG preview overlay
-.social-share-overlay .social-icon[target='_blank']::after {
+.runner-icons a[target='_blank']::after
+{
   content: none !important; /* Remove the icon content */
   display: none !important; /* Ensure it takes no space */
+}
+
+.social-share-overlay .social-icon[target='_blank']::after,
+.social-share-overlay .social-icon i.fa-x-twitter, // Target FA icon within the link too if needed
+.social-share-overlay .social-icon[href*="x.com"]::after // More generic target for X link
+{
+  content: none !important; /* Remove the icon content */
 }

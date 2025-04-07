@@ -66,6 +66,8 @@ unsafe = true
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" # Example CDN link, check for latest version
 
 # JS Plugins
 [[params.plugins.js]]
@@ -86,6 +88,10 @@ expire_days = 14
 ############################# social site ########################
 [[params.social]]
 title = "github"
-icon = "ti-github" # themify icon : https://themify.me/themify-icons
+icon = "fa-brands fa-github" # themify icon : https://themify.me/themify-icons
 link = "https://github.com/boycott-beacon/"
+[[params.social]]
+title = "X"
+icon = "fa-brands fa-x-twitter" # themify icon : https://themify.me/themify-icons
+link = "https://x.com/boycottbeacon/"
 
