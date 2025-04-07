@@ -34,14 +34,13 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
   position: relative;
   width: 100%;
   border-radius: $border-radius;
-  // IMPORTANT: This clips the bottom half of overlapping icons
   overflow: hidden;
   box-shadow:
     0 4px 12px rgba($black, 0.1),
     0 0 0 1px rgba($white, 0.1),
     0 0 20px rgba($white, 0.3);
   transition: transform $transition-duration ease, box-shadow $transition-duration ease;
-  aspect-ratio: 1.91/1;
+  aspect-ratio: 1.91/1; // <<< Keep the original aspect ratio globally
 
   &:hover {
     box-shadow:
@@ -61,8 +60,10 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
 .og-preview-image {
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover; // Default: Cover the container
   background-position: center;
+  background-repeat: no-repeat; // Add no-repeat globally
+  background-color: $light; // Add a background color for letterboxing
   position: relative; // Positioning context for overlay
 }
 
@@ -78,32 +79,25 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
   position: absolute;
   left: 0;
   right: 0;
-  // Position the overlay itself at the bottom edge
   bottom: 0;
-  // Height can be auto or roughly the icon height, doesn't strictly matter for this transform approach
   height: auto;
-  display: flex; // To center the container inside if needed (though transform does the work)
-  justify-content: center; // Center container horizontally
+  display: flex;
+  justify-content: center;
   opacity: 0; // Start hidden
   transition: opacity $transition-duration ease;
   z-index: 2;
-  // Remove padding-bottom, the transform handles vertical position now
-  // padding-bottom: ($social-icon-height / 2); // REMOVED
   box-sizing: border-box;
 }
 
 .social-icons-container {
   display: flex;
-  justify-content: center; // Keep icons centered within the container
+  justify-content: center;
   gap: 12px;
   width: 100%;
-  padding: 0 15px; // Horizontal padding for spacing from edges
+  padding: 0 15px;
   box-sizing: border-box;
-  position: relative; // Needed for z-index stacking if icons overlap complex backgrounds
-  // *** KEY CHANGE: Pull the container up by half its height ***
+  position: relative;
   transform: translateY(-50%);
-  // Apply transition to the transform if you want the icons to slide up smoothly on hover
-  // transition: transform $transition-duration ease, opacity $transition-duration ease; // Add transform here if needed
 }
 
 .social-icon {
@@ -118,14 +112,14 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
   transition: transform $transition-duration ease, box-shadow $transition-duration ease;
   text-decoration: none;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba($black, 0.2); // Add slight shadow for depth
+  box-shadow: 0 2px 4px rgba($black, 0.2);
 
   &.twitter { background: #1DA1F2; }
   &.facebook { background: #4267B2; }
   &.linkedin { background: #0077B5; }
 
   &:hover {
-    transform: translateY(-3px); // Keep lift effect on icon hover
+    transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba($black, 0.3);
   }
 }
@@ -173,38 +167,38 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
   }
 }
 
-@include tablet {
+@include tablet { // Styles for tablet and smaller
   .og-preview-container {
-    aspect-ratio: 1.5/1;
+    // aspect-ratio: 1.5/1; // <<< REMOVE or comment out: Keep original aspect ratio
     box-shadow: 0 4px 20px rgba($black, 0.15), 0 0 0 1px rgba($white, 0.2), 0 0 30px rgba($white, 0.4);
-    &:hover { transform: none; }
+    &:hover { transform: none; } // Keep hover disabled
+  }
+
+  .og-preview-image {
+    background-size: contain; // <<< CHANGE: Ensure whole image fits
+    // background-repeat: no-repeat; // Already added globally
+    // background-color: $light; // Already added globally
   }
 
   .image-dark-overlay { background: rgba($black, 0); transition: none; }
 
-  // Apply social share overlay styles directly (icons always visible)
   .social-share-overlay {
     opacity: 1;
     transition: none;
   }
 
-  // Apply icon container transform directly
   .social-icons-container {
-    // Use tablet icon height for calculation if different, otherwise use default
-    transform: translateY(-50%);
-    // transition: none; // No transition needed if always visible
+    transform: translateY(-50%); // Keep vertical positioning
   }
 
-
-  // Apply runner styles directly (runner always hidden)
-  .sharing-runner { transform: translateY(100%); transition: none; }
+  .sharing-runner { transform: translateY(100%); transition: none; } // Keep hidden
 
   .social-icons-container { gap: 8px; }
   .social-icon {
     width: $social-icon-height-tablet;
     height: $social-icon-height-tablet;
     font-size: 18px;
-    &:hover { transform: none; box-shadow: 0 2px 4px rgba($black, 0.2); } // Keep base shadow, remove lift
+    &:hover { transform: none; box-shadow: 0 2px 4px rgba($black, 0.2); }
   }
   .runner-icons i { font-size: 14px; }
   .sharing-runner span { font-size: 13px; }

@@ -1,67 +1,40 @@
-// In _common.scss or _campaign-list.scss
+// assets/scss/templates/_campaign-list.scss
 
 .campaign-card-link {
-  display: block; // Ensure the link behaves like a block element
-  color: inherit; // Inherit text color, don't use default link blue
-  transition: all 0.2s ease-in-out; // Smooth transition for hover
-
-  &:hover {
-    color: inherit; // Keep text color consistent on hover
-    text-decoration: none; // Remove underline on hover
-    // The .hover-shadow class should already provide shadow effects
-  }
-
-  .card-img-top {
-    // Ensure images behave well, especially if resizing differs
-    object-fit: cover;
-    height: 225px; // Match the resize height for consistency
-  }
-
-  .card-body {
-    // Ensures the card body tries to take up available space if cards
-    // in a row naturally have different content heights due to text wrapping.
-    // The d-flex align-items-stretch on the column div helps enforce equal height overall.
-  }
-
-  .badge-light { // Style the tags slightly
-    background-color: $light; // Use theme's light variable
-    color: $text-color;      // Use theme's standard text color
-    font-weight: 500;
-    padding: 0.3em 0.6em;
-  }
-}
-// In _campaign-list.scss or _common.scss
-
-.campaign-card-link {
-  display: block;
+  display: block; // Keep this for the anchor
   color: inherit;
   transition: all 0.2s ease-in-out;
 
   &:hover {
     color: inherit;
     text-decoration: none;
+    // .hover-shadow class provides visual feedback
   }
 
-  .card-img-top { // General style for card images within the link
-    width: 100%;   // Make image fill the width of the card container
+  // --- Image Styling ---
+  // Be very specific targeting the image within the link
+  .campaign-card-image {
+    display: block;    // Force block display
+    width: 100%;       // Full width
+    object-fit: cover; // Cover the area
+    // Try 'contain' if 'cover' still clips content undesirably.
+    object-position: center top; // Prioritize top (adjust if needed: center center, center bottom)
+    // vertical-align: middle; // Might help in some flex contexts, often default for img
   }
 
-  .campaign-card-image { // Specific class for the image from Hugo
-    height: 210px; // <<< SET A FIXED HEIGHT (adjust value as needed for desired look)
-    // 210px roughly matches the 1.9:1 aspect ratio at 400px width.
-    // You could use 225px if you prefer the 16:9 height, but it will crop slightly top/bottom now.
-    object-fit: cover; // <<< Scales image to maintain aspect ratio while filling the height. Will crop top/bottom if needed.
-    // Use `object-fit: contain;` if you prefer letterboxing instead of cropping to show the whole image.
+  // --- Placeholder Styling ---
+  .campaign-card-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $light;
+    color: #ccc;
   }
 
-  .campaign-card-image-placeholder { // Style the placeholder div
-    height: 210px; // <<< MATCH THE HEIGHT of the actual image style above
-    width: 100%;   // Ensure it takes full width
-  }
-
-
+  // --- Other Card Styles ---
   .card-body {
-    // d-flex flex-column already handles basic structure
+    // No changes needed here, rely on flexbox from parent/internal classes
   }
 
   .badge-light {
@@ -71,3 +44,7 @@
     padding: 0.3em 0.6em;
   }
 }
+
+// --- Ensure no other conflicting styles ---
+// Make sure there are no global 'img' or '.card-img-top' rules outside
+// this block that might be setting height: auto !important; or similar.
