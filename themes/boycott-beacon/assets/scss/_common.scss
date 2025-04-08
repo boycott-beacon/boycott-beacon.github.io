@@ -396,7 +396,7 @@ textarea.form-control{
 
     &::before {
       position: absolute;
-      content: "\f144";                 // <<< CHANGED: Font Awesome Unicode for fa-circle-right
+      content: "\f054";                 // <<< CHANGED: Font Awesome Unicode for fa-circle-right
       font-family: 'Font Awesome 6 Free'; // <<< CHANGED: Use Font Awesome font family
       font-weight: 900;                 // <<< ADDED: Required for FA solid icons
       font-size: 14px;                  // Keep original size (adjust if needed)
@@ -503,7 +503,8 @@ a[target='_blank'] {
 
 .social-share-overlay .social-icon[target='_blank']::after,
 .social-share-overlay .social-icon i.fa-x-twitter, // Target FA icon within the link too if needed
-.social-share-overlay .social-icon[href*="x.com"]::after // More generic target for X link
+.social-share-overlay .social-icon[href*="x.com"]::after, // More generic target for X link
+.copyright .list-inline a[target='_blank']::after
 {
   content: none !important; /* Remove the icon content */
 }
