@@ -65,7 +65,7 @@ unsafe = true
 [[params.plugins.css]]
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
-link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" # Example CDN link, check for latest version
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" # Example CDN link, check for latest version
 
 # JS Plugins
 [[params.plugins.js]]
@@ -86,10 +86,13 @@ expire_days = 14
 ############################# social site ########################
 [[params.social]]
 title = "github"
-icon = "fa-brands fa-github" # themify icon : https://themify.me/themify-icons
+icon = "fa-brands fa-github"
 link = "https://github.com/boycott-beacon/"
 [[params.social]]
 title = "X"
-icon = "fa-brands fa-x-twitter" # themify icon : https://themify.me/themify-icons
+icon = "fa-brands fa-x-twitter"
 link = "https://x.com/boycottbeacon/"
-
+[[params.social]]
+title = "Bluesky"
+icon = "fa-brands fa-bluesky" # Font Awesome icon for Bluesky
+link = "https://bsky.app/profile/boycottbeacon.bsky.social"

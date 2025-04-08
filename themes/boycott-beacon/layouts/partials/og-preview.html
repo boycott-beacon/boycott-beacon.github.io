@@ -1,3 +1,4 @@
+<!-- ./themes/boycott-beacon/layouts/partials/og-preview.html -->
 {{ $ogImage := "" }}
 {{ with .Resources.GetMatch "og.png" }}
 {{ $ogImage = .RelPermalink }}
@@ -18,6 +19,10 @@
              target="_blank" rel="noopener" class="social-icon twitter" title="Share on X/Twitter"> <!-- Changed title -->
             <i class="fa-brands fa-x-twitter"></i> <!-- <<< CHANGED HERE -->
           </a>
+          <a href="https://bsky.app/intent/compose?text={{ .Title | urlquery }}%0A{{ .Permalink | absURL }}"
+             target="_blank" rel="noopener" class="social-icon bluesky" title="Share on Bluesky"> <!-- <<< ADDED BLUESKY -->
+            <i class="fa-brands fa-bluesky"></i>
+          </a>
           <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}"
              target="_blank" rel="noopener" class="social-icon facebook" title="Share on Facebook">
             <i class="fa-brands fa-facebook"></i>
@@ -35,7 +40,7 @@
       <span>. : : Sharing is Support : : .</span>
       <div class="runner-icons">
         <i class="fa-brands fa-x-twitter"></i> <!-- <<< CHANGED HERE -->
-        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-bluesky"></i> <!-- <<< ADDED BLUESKY -->
         <i class="fa-brands fa-linkedin"></i>
       </div>
     </div>

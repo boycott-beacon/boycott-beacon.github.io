@@ -1,3 +1,5 @@
+/* ./themes/boycott-beacon/assets/scss/templates/_og-preview.scss */
+
 /* SCSS for OG Preview Component (_og-preview.scss) */
 
 // Assumed variables (replace with your actual variables if different)
@@ -115,6 +117,7 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
   border: 2px solid transparent; // <<< ADD: Initial transparent border
 
   &.twitter { background: rgba($secondary-color, .8); }
+  &.bluesky { background: rgba($secondary-color, .8); } // <<< ADDED BLUESKY
   &.facebook { background: rgba($secondary-color, .8); }
   &.linkedin { background: rgba($secondary-color, .8); }
 
