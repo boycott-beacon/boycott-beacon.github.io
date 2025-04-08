@@ -41,12 +41,12 @@ Your time and skills are incredibly valuable too!
 *   **Report Bugs & Suggest Features:**
     Encounter an issue or have a great idea? Let us know by opening an issue on our GitHub repository.
     <!-- TODO: Replace '#' with your actual GitHub issues link -->
-    <a href="#" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer">Report Issue / Suggest Feature</a>
+    <a href="#" class="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Report Issue / Suggest Feature</a>
 
 *   **Contribute Code:**
     Are you a developer? We welcome contributions! Check out our codebase and contribution guidelines on GitHub.
     <!-- TODO: Replace '#' with your actual GitHub repository link -->
-    <a href="#" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer">Contribute on GitHub</a>
+    <a href="#" class="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Contribute on GitHub</a>
 
 *   **Spread the Word:**
     Tell your friends, family, and colleagues about Boycott Beacon! Share it on social media or relevant online communities.
@@ -54,7 +54,7 @@ Your time and skills are incredibly valuable too!
 *   **Leave a Review:**
     Positive reviews on the browser extension store help others discover Boycott Beacon.
     <!-- TODO: Replace '#' with your Chrome Web Store (or other store) link -->
-    <a href="#" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener noreferrer">Review on Chrome Web Store</a>
+    <a href="#" class="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Review on Chrome Web Store</a>
 
 *   **Create/Share Campaign Lists:**
     The power of Boycott Beacon lies in the campaign manifests. If you know of or create public campaign lists compatible with our format, share them!
