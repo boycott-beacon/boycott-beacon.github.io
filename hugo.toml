@@ -96,3 +96,6 @@ link = "https://x.com/boycottbeacon/"
 title = "Bluesky"
 icon = "fa-brands fa-bluesky" # Font Awesome icon for Bluesky
 link = "https://bsky.app/profile/boycottbeacon.bsky.social"
+
+[[imports]]
+path = "github.com/gethugothemes/hugo-modules/videos"

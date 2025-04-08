@@ -1,3 +1,4 @@
+# ./data/en/homepage.yml
 # YAML Configuration for Boycott Beacon Extension Website/Landing Page
 
 slider:
@@ -30,16 +31,6 @@ banner_feature:
       icon: "fa-solid fa-gears"
       content: "View details, citations, and temporarily mute alerts per-site via the ribbon. Manage subscriptions via the options page."
 
-cta:
-  enable: true
-  subtitle: "Get Involved" # Changed subtitle
-  title: "Support the Project" # Changed title
-  content: "Boycott Beacon is open-source and community-driven. Help us improve by reporting issues, suggesting features on GitHub, or contributing to development costs." # Changed content
-  button:
-    enable: true
-    label: "Support Us" # Changed label
-    link: "/support/" # <<< Already points to /support/, Good!
-
 how_it_works:
   enable: true
   title: "Simple Steps to Get Started" # Changed title
@@ -60,3 +51,13 @@ how_it_works:
       description: "The extension automatically checks sites you visit against your subscribed lists and displays a banner if there's a match."
       link_label: "" # No link needed for this step usually
       link: ""
+
+# --- NEW VIDEO FEATURE SECTION ---
+video_feature:
+  enable: true
+  title: "See Boycott Beacon in Action"
+  description: "Watch this short video to see how easy it is to install the extension, subscribe to a campaign, and receive boycott alerts while browsing."
+  video_src: "videos/boycott-beacon.mp4" # Path relative to the static directory
+  video_width: "800" # Adjust width as needed
+  video_height: "auto" # Adjust height as needed
+# --- END VIDEO FEATURE SECTION ---

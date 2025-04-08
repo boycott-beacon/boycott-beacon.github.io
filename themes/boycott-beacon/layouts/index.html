@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{ $data := index site.Data site.Language.Lang }}
-<!-- hero section -->
+
 {{ if $data.homepage.slider.enable }}
 {{ with $data.homepage.slider }}
 <section class="hero-section overlay bg-cover" data-background="{{ .bg_image | absURL }}">
@@ -11,17 +11,15 @@
         {{ with index .slider_item 0 }}
         <h1 class="text-white">{{ .title | markdownify }}</h1>
         <p class="text-muted mb-4">{{ .content | markdownify }}</p>
-        {{/* --- Button Rendering --- */}}
-        <div class="hero-buttons"> {{/* Optional wrapper for buttons */}}
+        <div class="hero-buttons">
           {{ if .button.enable }}
-          <a href="{{ .button.link | absLangURL }}" class="btn btn-primary mr-2 mb-2" target="_blank" rel="noopener noreferrer">{{ .button.label }}</a>          {{ end }}
+          <a href="{{ .button.link | absLangURL }}" class="btn btn-primary mr-2 mb-2" target="_blank" rel="noopener noreferrer">{{ .button.label }}</a>
+          {{ end }}
           {{ if .button2.enable }}
-          {{/* Determine button style - default to primary if not specified */}}
           {{ $button2_style := .button2.style | default "btn-primary" }}
-          <a href="{{ .button2.link | absLangURL }}" class="btn btn-primary mb-2">{{ .button2.label }}</a> {{/* Added mb-2 for spacing */}}
+          <a href="{{ .button2.link | absLangURL }}" class="btn {{ $button2_style }} mb-2">{{ .button2.label }}</a>
           {{ end }}
         </div>
-        {{/* --- End Button Rendering --- */}}
         {{ end }}
       </div>
     </div>
@@ -29,9 +27,7 @@
 </section>
 {{ end }}
 {{ end }}
-<!-- /hero section -->
 
-<!-- banner-feature -->
 {{ if $data.homepage.banner_feature.enable }}
 {{ with $data.homepage.banner_feature }}
 <section class="bg-gray overflow-md-hidden">
@@ -55,26 +51,23 @@
 </section>
 {{ end }}
 {{ end }}
-<!-- /banner-feature -->
-{{/* How it Works Section (Replaces Courses) */}}
+
 {{ if $data.homepage.how_it_works.enable }}
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center"> {{/* Center the title */}}
+      <div class="col-12 text-center">
         <h2 class="section-title">{{ $data.homepage.how_it_works.title }}</h2>
       </div>
     </div>
-    <!-- Steps list -->
-    <div class="row justify-content-center text-center"> {{/* Center the step columns */}}
+    <div class="row justify-content-center text-center">
       {{ range $data.homepage.how_it_works.steps }}
-      <div class="col-lg-4 col-sm-6 mb-4"> {{/* 3 columns on large, 2 on small */}}
-        <div class="px-3"> {{/* Add some padding */}}
-          <i class="{{ .icon }} feature-icon mb-4" style="font-size: 60px;"></i> {{/* Use feature-icon class & larger size */}}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="px-3">
+          <i class="{{ .icon }} feature-icon mb-4" style="font-size: 60px;"></i>
           <h4 class="mb-3">{{ .title }}</h4>
           <p class="mb-4">{{ .description }}</p>
           {{ if and .link .link_label }}
-          {{/* Check if the link is external and add target="_blank" if it is */}}
           <a href="{{ .link | absLangURL }}"
              class="btn btn-sm btn-primary"
              {{ if or (strings.HasPrefix .link "http://") (strings.HasPrefix .link "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>
@@ -85,9 +78,52 @@
       </div>
       {{ end }}
     </div>
-    <!-- /Steps list -->
   </div>
 </section>
+{{ end }}
+
+{{ if $data.homepage.video_feature.enable }}
+{{ with $data.homepage.video_feature }}
+<section class="section video-feature-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-title mb-4">{{ .title }}</h2>
+        <p class="mb-5">{{ .description }}</p>
+        {{ partial "video.html" (dict
+        "Src" ( .video_src | absURL )
+        "Width" (.video_width | default "100%")
+        "Height" (.video_height | default "auto")
+        "Class" "rounded shadow"
+        "Controls" "true"
+        "Muted" "false"
+        "Loop" "false"
+        "Autoplay" "false"
+        ) }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ if $data.homepage.cta.enable }}
+{{ with $data.homepage.cta }}
+<section class="section bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h6 class="text-white font-secondary mb-0">{{ .subtitle }}</h6>
+        <h2 class="section-title text-white">{{ .title }}</h2>
+        <p class="text-white mb-4">{{ .content | markdownify }}</p>
+        {{ if .button.enable }}
+        <a href="{{ .button.link | absLangURL }}" class="btn btn-light">{{ .button.label }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
 {{ end }}
 
 {{ end }}
