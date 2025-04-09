@@ -14,7 +14,7 @@ slider:
         enable: true
         label: "Browse Campaigns"
         link: "/campaigns/"
-        style: "btn-outline-primary"
+        style: "btn-primary"
 banner_feature:
   enable: true
   feature_item:
