@@ -15,6 +15,10 @@ contact_form_action = "#" # contact form works with https://formspree.io
 google_analitycs_id = "" # your id
 # top header
 top_header = true
+og_preview_effect_probability = 85 # Chance (out of 100) the effect plays on load
+og_preview_effect_duration = 750 # Duration of the effect in milliseconds
+og_preview_effect_types = ["glitch", "static", "warble"] # Available effect types
+
 
 ############################# Build ##############################
 [build]

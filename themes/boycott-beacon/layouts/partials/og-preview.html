@@ -6,13 +6,19 @@
 
 {{/* Only render the preview if an image is found */}}
 {{ if $ogImage }}
-<div class="og-preview-wrapper">
+<div class="og-preview-wrapper"
+     data-effect-probability="{{ site.Params.og_preview_effect_probability | default 15 }}"
+     data-effect-duration="{{ site.Params.og_preview_effect_duration | default 750 }}">
   <div class="og-preview-container">
     <div class="og-preview-image" style="background-image: url('{{ $ogImage }}')">
-      <!-- Dark overlay covering entire image area -->
+      <!-- Dark overlay covering entire image area (already exists) -->
       <div class="image-dark-overlay"></div>
 
-      <!-- Social share buttons -->
+      <!-- ADDED: Effect Overlay -->
+      <div class="og-effect-overlay"></div>
+      <!-- END ADDED -->
+
+      <!-- Social share buttons (already exists) -->
       <div class="social-share-overlay">
         <div class="social-icons-container">
           <a href="https://x.com/intent/tweet?text={{ .Title | urlquery }}%20{{ .Permalink | absURL }}"
@@ -35,7 +41,7 @@
       </div>
     </div>
 
-    <!-- Sharing runner at bottom -->
+    <!-- Sharing runner at bottom (already exists) -->
     <div class="sharing-runner">
       <span>. : : Sharing is Support : : .</span>
       <div class="runner-icons">

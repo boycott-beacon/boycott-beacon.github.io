@@ -159,6 +159,102 @@ $social-icon-height-tablet: 32px; // Define icon height for calculation
   }
 }
 
+.og-preview-image {
+  // ... (existing styles) ...
+  position: relative; // Ensure it's a positioning context
+  overflow: hidden;   // Hide effect overflows if necessary
+}
+
+// --- ADDED: Effect Overlay and Styles ---
+.og-effect-overlay {
+  position: absolute;
+  inset: 0; // Cover the parent
+  background: transparent; // Start transparent
+  opacity: 0;
+  pointer-events: none; // Don't interfere with clicks
+  z-index: 2; // Above image overlay, below social icons
+  will-change: opacity, transform, background, filter; // Hint browser for animation optimization
+
+  // Shared animation properties (applied by JS)
+  &.animate-effect {
+    animation-name: effect-sweep;
+    animation-timing-function: linear; // Or ease-in-out
+    animation-fill-mode: forwards; // Stay at the end state (opacity 0)
+    // animation-duration is set by JS
+  }
+}
+
+// --- Effect Definitions ---
+
+// 1. Static Effect
+.og-effect-overlay.effect-static {
+  // Simple static: Use a repeating noise background image (create one or find one online)
+  // background-image: url('/images/static-noise.png'); // <<< Replace with your noise pattern path
+  // Or simulate with a gradient:
+  background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
+  radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 1px 1px, 3px 3px;
+}
+
+// 2. Glitch Effect (using pseudo-elements)
+.og-effect-overlay.effect-glitch {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit; // Inherit the parent's background-image (the OG image)
+    background-color: rgba($primary-color, 0.2); // Tint
+    animation: glitch-anim 150ms infinite linear alternate-reverse;
+    opacity: 0.8;
+    transform: translate3d(0,0,0); // Promote to own layer
+  }
+
+  &::after {
+    background-color: rgba($secondary-color, 0.1); // Different tint
+    animation-delay: -50ms; // Offset animation
+    animation-direction: alternate;
+  }
+}
+
+// 3. Warble Effect (using SVG filter)
+.og-effect-overlay.effect-warble {
+  // We apply the filter to the *image* element itself when this effect is active,
+  // as SVG filters work best on the source element.
+  // The overlay itself might just control the timing/sweep via its animation.
+  // Or, for simplicity, we apply filter to the overlay and give it a background.
+  background: inherit; // Inherit the actual OG image background
+  filter: url(#og-warble-filter); // Apply the SVG filter
+}
+
+
+// --- Keyframe Animations ---
+
+// Sweep animation (controls opacity mainly)
+@keyframes effect-sweep {
+  0% { opacity: 0; }
+  15% { opacity: 0.7; } // Quickly fade in effect
+  85% { opacity: 0.6; } // Hold effect
+  100% { opacity: 0; } // Fade out
+}
+
+// Glitch animation parts
+@keyframes glitch-anim {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip-path: inset(random(80) * 1% 0 random(80) * 1% 0);
+      transform: translate(random(5) - 2.5 + px, random(5) - 2.5 + px);
+    }
+  }
+  // Ensure reset at end if needed, though sweep handles fade out
+  100% {
+    clip-path: inset(0);
+    transform: translate(0,0);
+  }
+}
+
+
 /* --- Responsive Adjustments --- */
 
 @include desktop {
